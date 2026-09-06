@@ -1,0 +1,648 @@
+% !TeX program = lualatex
+\documentclass[10pt,a4paper]{article}
+
+% ---------------------------------------------------------------------------- %
+% PACKAGES
+% ---------------------------------------------------------------------------- %
+
+\usepackage[
+    top=1.25cm,
+    bottom=1.25cm,
+    left=1.7cm,
+    right=1.7cm
+]{geometry}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[scaled=0.94]{helvet}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+
+\pagestyle{empty}
+
+% ---------------------------------------------------------------------------- %
+% ---------------------------------------------------------------------------- %
+% CV CONFIGURATION
+% ---------------------------------------------------------------------------- %
+% ---------------------------------------------------------------------------- %
+%
+% All visual formatting should be controlled from this section.
+%
+% ---------------------------------------------------------------------------- %
+
+
+% ---------------------------------------------------------------------------- %
+% FONT
+% ---------------------------------------------------------------------------- %
+
+% Helvetica-compatible sans serif supplied by the standard TeX installation.
+% This avoids depending on system fonts or the fontspec font loader.
+\renewcommand{\familydefault}{\sfdefault}
+
+
+% ---------------------------------------------------------------------------- %
+% COLOURS
+% ---------------------------------------------------------------------------- %
+
+\definecolor{CVBlack}{HTML}{000000}
+\definecolor{CVDarkGray}{HTML}{333333}
+\definecolor{CVGray}{HTML}{666666}
+\definecolor{CVLightGray}{HTML}{CCCCCC}
+
+
+% ---------------------------------------------------------------------------- %
+% FONT SIZES
+% ---------------------------------------------------------------------------- %
+
+% ---------- Header ----------
+
+\newcommand{\KeywordSize}{9pt}
+\newcommand{\NameSize}{20pt}
+\newcommand{\ContactSize}{8pt}
+
+% ---------- Opening statement ----------
+
+\newcommand{\StatementSize}{9.5pt}
+
+% ---------- Section headings ----------
+
+\newcommand{\SectionSize}{11.5pt}
+
+% ---------- CV entries ----------
+
+\newcommand{\RoleSize}{10.3pt}
+\newcommand{\CompanySize}{9.6pt}
+\newcommand{\DurationSize}{9pt}
+\newcommand{\BodySize}{9.2pt}
+
+
+% ---------------------------------------------------------------------------- %
+% LINE HEIGHTS
+% ---------------------------------------------------------------------------- %
+
+% ---------- Header ----------
+
+\newcommand{\KeywordLineSize}{0pt}
+\newcommand{\NameLineSize}{20pt}
+\newcommand{\ContactLineSize}{8pt}
+
+% ---------- Opening statement ----------
+
+\newcommand{\StatementLineSize}{10pt}
+
+% ---------- Section headings ----------
+
+\newcommand{\SectionLineSize}{12pt}
+
+% ---------- CV entries ----------
+
+\newcommand{\RoleLineSize}{11.5pt}
+\newcommand{\CompanyLineSize}{10.8pt}
+\newcommand{\DurationLineSize}{9pt}
+\newcommand{\BodyLineSize}{11pt}
+
+
+% ---------------------------------------------------------------------------- %
+% HEADER SPACING
+% ---------------------------------------------------------------------------- %
+
+% Space below name
+\newcommand{\HeaderNameToKeyword}{12pt}
+
+% Space between keyword row and contact row
+\newcommand{\HeaderKeywordToContact}{5pt}
+
+% Space between contact rows
+\newcommand{\HeaderContactRows}{2pt}
+
+% Space after entire header
+\newcommand{\HeaderAfter}{-5pt}
+
+
+% ---------------------------------------------------------------------------- %
+% OPENING STATEMENT SPACING
+% ---------------------------------------------------------------------------- %
+
+% Space before opening statement
+\newcommand{\StatementBefore}{0pt}
+
+% Space after opening statement
+\newcommand{\StatementAfter}{4pt}
+
+
+% ---------------------------------------------------------------------------- %
+% SECTION SPACING
+% ---------------------------------------------------------------------------- %
+
+% Space before a section
+\newcommand{\SectionBefore}{4pt}
+
+% Space between thick line and section title
+\newcommand{\SectionLineToTitle}{0pt}
+
+% Space between section title and thin line
+\newcommand{\SectionTitleToLine}{2pt}
+
+% Space between thin line and first entry
+\newcommand{\SectionLineToEntry}{0pt}
+
+
+% ---------------------------------------------------------------------------- %
+% ENTRY SPACING
+% ---------------------------------------------------------------------------- %
+
+% Space before an entry
+\newcommand{\EntryBefore}{0pt}
+
+% Space between role and company
+\newcommand{\RoleToCompany}{-5pt}
+
+% Space between company and bullet list
+\newcommand{\CompanyToBullets}{3pt}
+
+% Space after an entry
+\newcommand{\EntryAfter}{6pt}
+
+
+% ---------------------------------------------------------------------------- %
+% BULLET SPACING
+% ---------------------------------------------------------------------------- %
+
+% Space between individual bullets
+\newcommand{\BulletSpacing}{2pt}
+
+% Space before bullet list
+\newcommand{\BulletBefore}{0pt}
+
+% Space after bullet list
+\newcommand{\BulletAfter}{0pt}
+
+% Distance from left edge to bullet
+\newcommand{\BulletIndent}{1.25em}
+
+
+% ---------------------------------------------------------------------------- %
+% HORIZONTAL LINES
+% ---------------------------------------------------------------------------- %
+
+% Thick section line
+\newcommand{\SectionLineThickness}{1.5pt}
+
+% Thin section line
+\newcommand{\SubsectionLineThickness}{0.4pt}
+
+% Main CV divider
+\newcommand{\CVLineThickness}{0.5pt}
+
+
+% ---------------------------------------------------------------------------- %
+% DURATION COLUMN
+% ---------------------------------------------------------------------------- %
+
+% Width of the duration column
+\newcommand{\DurationWidth}{4.5cm}
+
+
+% ---------------------------------------------------------------------------- %
+% ---------------------------------------------------------------------------- %
+% END OF CONFIGURATION
+% ---------------------------------------------------------------------------- %
+% ---------------------------------------------------------------------------- %
+
+
+% ---------------------------------------------------------------------------- %
+% HYPERLINK CONFIGURATION
+% ---------------------------------------------------------------------------- %
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=CVBlack,
+    linkcolor=CVBlack
+}
+
+
+% ---------------------------------------------------------------------------- %
+% FONT SETUP
+% ---------------------------------------------------------------------------- %
+
+% The document-wide font family is selected above using \familydefault.
+
+
+% ---------------------------------------------------------------------------- %
+% GENERAL FORMATTING
+% ---------------------------------------------------------------------------- %
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+
+% ---------------------------------------------------------------------------- %
+% CV COMMANDS
+% ---------------------------------------------------------------------------- %
+
+
+% ------------------------------------------------------------
+% Main horizontal divider
+% ------------------------------------------------------------
+
+\newcommand{\CVLine}{
+    \vspace{\HeaderAfter}
+    \noindent
+    \textcolor{CVBlack}{
+        \rule{\textwidth}{\CVLineThickness}
+    }
+    \vspace{\HeaderAfter}
+}
+
+
+% ------------------------------------------------------------
+% First section
+%
+% The first section does NOT have a thick line because the
+% CVLine separating the opening statement already provides it.
+% ------------------------------------------------------------
+
+\newcommand{\CVFirstSection}[1]{
+
+    \vspace{\SectionBefore}
+
+    % Section title
+
+    {\fontsize{\SectionSize}{\SectionLineSize}
+    \selectfont
+    \textbf{\textcolor{CVBlack}{#1}}}
+
+    \vspace{\SectionTitleToLine}
+
+    % Thin grey line
+
+    \noindent
+    \textcolor{CVLightGray}{
+        \rule{\textwidth}{\SubsectionLineThickness}
+    }
+
+    \vspace{\SectionLineToEntry}
+}
+
+
+% ------------------------------------------------------------
+% Subsequent sections
+%
+% These have a thick black line above the section title.
+% ------------------------------------------------------------
+
+\newcommand{\CVSection}[1]{
+
+    \vspace{\SectionBefore}
+
+    % Thick black line
+
+    \noindent
+    \textcolor{CVBlack}{
+        \rule{\textwidth}{\SectionLineThickness}
+    }
+
+    \vspace{\SectionLineToTitle}
+
+    % Section title
+
+    {\fontsize{\SectionSize}{\SectionLineSize}
+    \selectfont
+    \textbf{\textcolor{CVBlack}{#1}}}
+
+    \vspace{\SectionTitleToLine}
+
+    % Thin grey line
+
+    \noindent
+    \textcolor{CVLightGray}{
+        \rule{\textwidth}{\SubsectionLineThickness}
+    }
+
+    \vspace{\SectionLineToEntry}
+}
+
+
+% ------------------------------------------------------------
+% CV Entry
+%
+% #1 = Role / Degree
+% #2 = Company / Institution
+% #3 = Location
+% #4 = Duration
+% #5 = Bullet points
+% ------------------------------------------------------------
+
+\newcommand{\CVEntry}[5]{
+
+    \vspace{\EntryBefore}
+
+    % --------------------------------------------------------
+    % Role + Duration
+    % --------------------------------------------------------
+
+    \noindent
+    \begin{tabularx}{\textwidth}{
+        @{}
+        >{\raggedright\arraybackslash}X
+        >{\raggedleft\arraybackslash}p{\DurationWidth}
+        @{}
+    }
+
+        {\fontsize{\RoleSize}{\RoleLineSize}
+        \selectfont
+        \textbf{\textcolor{CVBlack}{#1}}}
+        &
+        {\fontsize{\DurationSize}{\DurationLineSize}
+        \selectfont
+        \textcolor{CVGray}{#4}}
+
+    \end{tabularx}
+
+    \vspace{\RoleToCompany}
+
+    % --------------------------------------------------------
+    % Company + Location
+    % --------------------------------------------------------
+
+    \noindent
+    {\fontsize{\CompanySize}{\CompanyLineSize}
+    \selectfont
+    \textbf{\textcolor{CVDarkGray}{#2}}
+    \textcolor{CVGray}{\textbar\ #3}}
+
+    \vspace{\CompanyToBullets}
+
+    % --------------------------------------------------------
+    % Bullet points
+    % --------------------------------------------------------
+
+    \begin{itemize}[
+        leftmargin=\BulletIndent,
+        itemsep=\BulletSpacing,
+        topsep=\BulletBefore,
+        parsep=0pt,
+        partopsep=0pt
+    ]
+        #5
+    \end{itemize}
+
+    \vspace{\EntryAfter}
+}
+
+
+% ------------------------------------------------------------
+% Bullet point
+% ------------------------------------------------------------
+
+\newcommand{\CVBullet}[1]{
+    \item
+    {\fontsize{\BodySize}{\BodyLineSize}
+    \selectfont
+    \textcolor{CVDarkGray}{#1}}
+}
+
+
+% ---------------------------------------------------------------------------- %
+% ---------------------------------------------------------------------------- %
+% DOCUMENT
+% ---------------------------------------------------------------------------- %
+% ---------------------------------------------------------------------------- %
+
+\begin{document}
+
+
+% ---------------------------------------------------------------------------- %
+% HEADER
+% ---------------------------------------------------------------------------- %
+
+\begin{center}
+
+    % ------------------------------------------------------------------------ %
+    % Name
+    % ------------------------------------------------------------------------ %
+
+    {
+        \fontsize{\NameSize}{\NameLineSize}\selectfont
+        \textbf{\textcolor{CVBlack}{Jason Wakim Richards}}
+    }
+
+    % ------------------------------------------------------------------------ %
+    % Contact information
+    % ------------------------------------------------------------------------ %
+
+    \vspace{\HeaderKeywordToContact}
+
+    {
+        \fontsize{\ContactSize}{\ContactLineSize}
+        \selectfont
+        \textcolor{CVBlack}
+        {
+            +44 77 08 348 077
+            \quad\textbar\quad
+            \href{mailto:jason2richards@gmail.com}{jason2richards@gmail.com}
+            \\
+            \href{https://github.com/richarJ2002}{github.com/richarJ2002}
+            \quad\textbar\quad
+            \href{https://www.linkedin.com/in/jason-richards-jwr2002/}
+            {linkedin.com/in/jason-richards-jwr2002/}
+            \quad\textbar\quad
+            \href{https://richarj2002.github.io/personal_website/}{richarj2002.github.io/personal\_website/}
+        }
+    }
+
+\end{center}
+
+
+% ---------------------------------------------------------------------------- %
+% OPENING STATEMENT
+% ---------------------------------------------------------------------------- %
+
+\CVLine
+
+\vspace{\StatementBefore}
+
+{
+    \fontsize
+    {\StatementSize}
+    {\StatementLineSize}
+    \selectfont
+    \textcolor{CVDarkGray}
+    {
+        Guidance, navigation, and controls engineer with a First-Class MEng in
+        Aerospace Engineering and hands-on experience in aircraft dynamics, embedded
+        flight software, rigid-body simulation, digital signal processing, UAV flight
+        testing, and integrated GNC test campaigns. I develop C++ and Python autonomy
+        software for physical UAVs and evaluate it through simulation, laboratory,
+        hardware, and flight testing. At Airbus Defence \& Space, I developed C/C++ GNC
+        simulation software and led LiDAR test activities for an autonomous rover. As
+        ADCS Lead for the JamSail 3U CubeSat, I developed embedded flight software, an
+        attitude-dynamics and control simulation, an EKF, and digital sensor filters.
+        My background combines longitudinal and lateral aircraft-dynamics analysis
+        against flight-test data with test planning, cross-disciplinary integration,
+        performance analysis, and verification and validation.
+    }
+}
+
+\vspace{\StatementAfter}
+
+\CVLine
+
+
+% ---------------------------------------------------------------------------- %
+% WORK EXPERIENCE
+% --
+\CVFirstSection{Work Experience}
+
+\CVEntry
+{Doctoral Researcher -- Autonomous UAV Systems}
+{SnT, University of Luxembourg}
+{Kirchberg, Luxembourg}
+{November 2025 -- Present}
+{
+    \CVBullet{Develop high-quality C++ and Python autonomy software for UAV localization, Semantic Relational SLAM, and situational awareness, linking camera/IMU perception and state estimation with planning and control.}
+
+    \CVBullet{Integrate, tune, and deploy autonomous navigation on physical UAVs using ROS 2, PX4, embedded Linux, Raspberry Pi, and OpenVINS visual--inertial odometry, directly supporting controlled flight trials.}
+
+    \CVBullet{Build reproducible Docker-based development and deployment environments and camera--IMU characterization and calibration workflows with Kalibr, supported by version-controlled software and technical documentation.}
+
+    \CVBullet{Formulate test plans and conduct simulation, laboratory, hardware, and flight testing to assess integrated performance and robustness across sensing, estimation, mapping, planning, and control.}
+
+    \CVBullet{Collaborate closely across software, controls, perception, and vehicle-integration activities, taking ownership of implementation, interface troubleshooting, test analysis, and technical documentation.}
+}
+
+\CVEntry
+{AOCS/GNC Engineer Intern}
+{Airbus Defence \& Space}
+{Stevenage, UK}
+{July 2023 -- August 2024}
+{
+    \CVBullet{Served as lead test engineer for LiDAR activities during Integrated BreadBoarding (iBB) 3 \& 4, formulating procedures and supporting end-to-end verification of the Sample Fetch Rover concept at Technology Readiness Level 6.}
+
+    \CVBullet{Designed and built an integrated hardware/software GNC test bench, connecting LiDAR to rover breadboards through ROS over a local wireless network to capture data, characterize sensor performance, and validate navigation models.}
+
+    \CVBullet{Developed C/C++ software on Linux for an offline GNC simulation, coupling a natural-scene generator to produce synthetic camera imagery and LiDAR scans for rapid algorithm development and performance analysis.}
+
+    \CVBullet{Investigated LiDAR and radar simulation, terrain generation, and Vector Field Histogram planning for lunar-rover navigation, translating prototype concepts into the existing simulation environment.}
+
+    \CVBullet{Analyzed test-campaign data and converted results into technically grounded integration actions while collaborating across GNC, simulation, software, and test disciplines in a fast-paced Agile team.}
+}
+
+% ---------------------------------------------------------------------------- %
+% PROJECTS & LEADERSHIP
+% ---------------------------------------------------------------------------- %
+
+\CVSection{Projects \& Leadership}
+
+\CVEntry
+{JamSail 3U CubeSat -- AOCS/ADCS Lead}
+{NottSpace, University of Nottingham}
+{Nottingham, UK}
+{September 2024 -- August 2025}
+{
+    \CVBullet{Led ADCS design and implementation for a NottSpace 3U CubeSat, translating the concept of operations into subsystem and algorithm requirements, control modes, architecture, interfaces, and a verification and validation plan.}
+
+    \CVBullet{Developed embedded C flight software and a C/C++/CMake Linux simulation of rigid-body attitude dynamics and control to design and verify GNC algorithms before deployment to flight hardware.}
+
+    \CVBullet{Designed and implemented an EKF that fuses sun-sensor, magnetometer, and IMU measurements, together with TRIAD attitude determination and embedded control-state logic.}
+
+    \CVBullet{Performed FFT-based sensor-signal analysis, selected filter cut-off frequencies, implemented first-order digital low-pass filters, and verified performance through simulation and hardware testing.}
+}
+
+% Start the remaining projects on page two, keeping the complete JamSail entry
+% on page one and preserving Education & Training as a single final section.
+\clearpage
+
+\CVEntry
+{IDET-Sat -- Systems Engineer}
+{Nottingham Space Society}
+{Nottingham, UK}
+{September 2022 -- July 2023}
+{
+    \CVBullet{Defined system requirements, architecture, subsystem interfaces, Project Breakdown Tree, and Work Breakdown Structure within a student-led, 12-person team developing a 3U CubeSat.}
+
+    \CVBullet{Developed software on a Raspberry Pi running Linux and integrated a microcontroller, IMU, and cameras over I2C before the concept progressed to the competition build phase.}
+
+    \CVBullet{Contributed across embedded software, hardware and sensor integration, and system simulation while coordinating interfaces and technical development within the student team.}
+
+    \CVBullet{Achieved a top-four finish among 12 UK teams as first-time entrants to the UKSEDS Satellite Design Competition.}
+
+    \CVBullet{Led cross-team meetings, communicated design changes, and presented the integrated concept to industry experts, balancing technical interfaces, build constraints, and competition deadlines.}
+}
+
+\CVEntry
+{UKSEDS Volunteer}
+{UK Students for the Exploration and Development of Space}
+{Remote \& UK field events}
+{Sept. 2024 -- Sept. 2026}
+{
+    \CVBullet{Served as an Olympus Rover Trials (ORT) volunteer in the first year, helping organise a UK national rover competition with Airbus Defence \& Space and RAL Space.}
+
+    \CVBullet{Progressed in the second year to Competitions Management Co-Lead, overseeing four national competitions: ORT, SDC, ISAM, and NRC.}
+
+    \CVBullet{Coordinated volunteers, schedules, technical milestones, participant support, and partner engagement with Airbus Defence \& Space (SDC), the UK Space Agency (ISAM), Midlands Rocketry Club, and Skyrora (NRC).}
+
+    \CVBullet{Produced clear participant documentation and supported venue and field-event logistics, helping multidisciplinary volunteer teams deliver competitions to fixed schedules.}
+}
+
+% ---------------------------------------------------------------------------- %
+% EDUCATION
+% ---------------------------------------------------------------------------- %
+
+\CVSection{Education \& Training}
+
+\CVEntry
+{MEng Aerospace Engineering -- First-Class Honours}
+{University of Nottingham}
+{Nottingham, UK}
+{September 2020 -- August 2025}
+{
+    \CVBullet{Graduated with First-Class Honours, achieving 99\% in Dynamics \& Flight Mechanics and 91\% in Avionics Systems, with specialization in Aerospace Control Systems.}
+
+    \CVBullet{Developed MATLAB tools to analyze longitudinal and lateral aircraft dynamics, comparing modeled motion and dynamic modes with Cranfield University flight-test data.}
+
+    \CVBullet{Applied C/C++, Python, MATLAB, Simulink, and Linux to control design, flight-dynamics modeling, stability and performance analysis, estimation, and simulation.}
+}
+
+\CVEntry
+{IEEE RAS Summer School on Multi-Robot Systems}
+{Czech Technical University in Prague}
+{Prague, Czechia}
+{July 2026}
+{
+    \CVBullet{Completed the 2026 IEEE RAS Summer School on Multi-Robot Systems, covering cooperative aerial robotics and active perception; presented the SaCoGraph collaborative-UAV research concept.}
+
+    \CVBullet{Applied multi-robot autonomy concepts to collaborative sensing, semantic mapping, and resource-aware mission planning.}
+}
+
+\CVEntry
+{Space Resources \& Robotics Summer School}
+{AGH University of KrakÃ³w}
+{Krakow, Poland}
+{May 2026}
+{
+    \CVBullet{Completed intensive training in space resources, planetary robotics, and robotic manipulation for exploration applications.}
+
+    \CVBullet{Developed a broader systems perspective on robotic operations in challenging off-world environments.}
+}
+
+\CVEntry
+{Space Systems Engineering Training Course}
+{ESA Academy}
+{Transinne, Belgium}
+{May 2025}
+{
+    \CVBullet{Completed intensive ESA Academy training across the space-system lifecycle, from mission objectives and concepts of operations through architecture, integration, verification, and operations.}
+
+    \CVBullet{Applied requirements engineering and concurrent-design methods to translate user needs into traceable, testable requirements and manage interfaces between technical disciplines.}
+
+    \CVBullet{Practised system options and trade studies, budgets and margins, verification and validation planning, and the relationship between engineering decisions, schedule, cost, and risk.}
+
+    \CVBullet{Completed multidisciplinary group exercises and communicated design rationale and systems-engineering deliverables, strengthening collaborative problem-solving across complex spacecraft projects.}
+}
+
+
+\end{document}

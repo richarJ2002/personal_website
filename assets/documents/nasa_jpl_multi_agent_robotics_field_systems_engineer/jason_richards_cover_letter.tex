@@ -1,0 +1,331 @@
+% !TeX program = lualatex
+\documentclass[10pt,a4paper]{article}
+
+% ---------------------------------------------------------------------------- %
+% COVER-LETTER LAYOUT GUIDE
+% ---------------------------------------------------------------------------- %
+%
+% This file is designed for the following LaTeX Workshop recipe:
+%     latexmk -lualatex
+%
+% The formatting controls are collected in the VISUAL CONFIGURATION section.
+% In most cases, you should only need to change one of those named values.
+%
+% Common adjustments:
+%   - Page margins:                 geometry values under PACKAGES
+%   - Main body font size:          \BodySize
+%   - Spacing between body lines:   \BodyLineSize
+%   - Spacing between paragraphs:   \ParagraphSpacing
+%   - Space before section titles:  \SectionBefore
+%   - Space after section titles:   \SectionAfter
+%   - Space before the sign-off:    \ClosingBefore
+%
+% All body paragraphs except the final one use \LetterParagraph{...}.
+% The final paragraph uses \LetterFinalParagraph{...}, because the space before
+% "Yours sincerely" is controlled separately by \ClosingBefore.
+
+% ---------------------------------------------------------------------------- %
+% PACKAGES
+% ---------------------------------------------------------------------------- %
+
+% Page margins. Reduce these values to create more usable page space; increase
+% them to add more white space around the letter.
+\usepackage[
+    top=1.35cm,
+    bottom=1.35cm,
+    left=1.7cm,
+    right=1.7cm
+]{geometry}
+
+% Standard TeX font setup shared with the CV. This works with the LuaLaTeX
+% recipe and does not require a separately installed system font.
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[scaled=0.94]{helvet}
+
+% Colour definitions and clickable contact links.
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% Use Helvetica-style sans serif throughout and remove page numbers.
+\renewcommand{\familydefault}{\sfdefault}
+\pagestyle{empty}
+
+% ---------------------------------------------------------------------------- %
+% VISUAL CONFIGURATION
+% ---------------------------------------------------------------------------- %
+
+% -----------------------------------------------------------------------------
+% COLOURS
+% -----------------------------------------------------------------------------
+
+\definecolor{CVBlack}{HTML}{000000}       % Name, titles and important text
+\definecolor{CVDarkGray}{HTML}{333333}    % Main body text
+\definecolor{CVGray}{HTML}{666666}        % Date and secondary details
+\definecolor{CVLightGray}{HTML}{CCCCCC}   % Reserved for subtle dividers
+
+% -----------------------------------------------------------------------------
+% FONT SIZES
+% -----------------------------------------------------------------------------
+
+% Each value controls the visible font size of one part of the letter.
+\newcommand{\NameSize}{20pt}
+\newcommand{\KeywordSize}{8pt}
+\newcommand{\ContactSize}{8pt}
+\newcommand{\MetaSize}{8.8pt}
+\newcommand{\SubjectSize}{10pt}
+\newcommand{\SectionSize}{9.5pt}
+\newcommand{\BodySize}{9.25pt}
+
+% -----------------------------------------------------------------------------
+% LINE SPACING
+% -----------------------------------------------------------------------------
+
+% These values control the baseline-to-baseline distance within each text
+% element. For the body, increase \BodyLineSize to spread lines farther apart.
+\newcommand{\NameLineSize}{20pt}
+\newcommand{\KeywordLineSize}{9pt}
+\newcommand{\ContactLineSize}{8pt}
+\newcommand{\MetaLineSize}{10.5pt}
+\newcommand{\SubjectLineSize}{11.5pt}
+\newcommand{\SectionLineSize}{11pt}
+\newcommand{\BodyLineSize}{12.1pt}
+
+% -----------------------------------------------------------------------------
+% VERTICAL SPACING
+% -----------------------------------------------------------------------------
+
+% Name to specialisms line
+\newcommand{\HeaderNameToKeyword}{8pt}    
+
+% Specialisms line to contact line
+\newcommand{\HeaderKeywordToContact}{5pt} 
+
+% Contact line to horizontal rule
+\newcommand{\HeaderContactToLine}{2pt}    
+
+% Horizontal rule to date
+\newcommand{\HeaderLineToDate}{8pt}       
+
+% Letter-details spacing.
+\newcommand{\DateAfter}{22pt}             % Date to recipient details
+\newcommand{\RecipientAfter}{8pt}         % Recipient details to subject
+\newcommand{\SubjectAfter}{42pt}          % Subject to salutation
+\newcommand{\SalutationAfter}{18pt}       % Salutation to first section
+
+% Body spacing.
+\newcommand{\SectionBefore}{6pt}          % Previous paragraph to heading
+\newcommand{\SectionAfter}{2pt}           % Heading to its first paragraph
+\newcommand{\ParagraphSpacing}{10pt}       % Gap between body paragraphs
+
+% Closing spacing.
+\newcommand{\ClosingBefore}{7pt}          % Final paragraph to sign-off
+\newcommand{\SignatureSpace}{22pt}         % Sign-off to typed name
+
+% Horizontal-rule thickness.
+\newcommand{\HeaderLineThickness}{0.5pt}
+
+% Do not indent paragraphs. Paragraph gaps are inserted explicitly by the
+% helper commands below, so global \parskip remains zero.
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% Make links clickable while keeping them visually consistent with the letter.
+\hypersetup{
+    colorlinks=true,
+    urlcolor=CVBlack,
+    linkcolor=CVBlack
+}
+
+% -----------------------------------------------------------------------------
+% REUSABLE FORMATTING COMMANDS
+% -----------------------------------------------------------------------------
+
+% Section heading used to divide the letter into its four narrative parts.
+% \addvspace prevents adjacent spacing commands from accidentally stacking.
+\newcommand{\LetterSection}[1]{%
+    \par\addvspace{\SectionBefore}%
+    {\fontsize{\SectionSize}{\SectionLineSize}\selectfont
+     \textbf{\textcolor{CVBlack}{#1}}\par}%
+    \addvspace{\SectionAfter}%
+}
+
+% Standard body paragraph. Change only \ParagraphSpacing above to control the
+% visible gap after every paragraph that uses this command.
+\newcommand{\LetterParagraph}[1]{%
+    \noindent #1\par
+    \addvspace{\ParagraphSpacing}%
+}
+
+% Final body paragraph. It deliberately adds no paragraph gap because
+% \ClosingBefore controls the distance to "Yours sincerely".
+\newcommand{\LetterFinalParagraph}[1]{%
+    \noindent #1\par
+}
+
+% ---------------------------------------------------------------------------- %
+% DOCUMENT
+% ---------------------------------------------------------------------------- %
+
+\begin{document}
+
+% -----------------------------------------------------------------------------
+% HEADER
+% -----------------------------------------------------------------------------
+
+\begin{center}
+
+
+    % ------------------------------------------------------------------------ %
+    % Name
+    % ------------------------------------------------------------------------ %
+
+    {
+        \fontsize{\NameSize}{\NameLineSize}\selectfont
+        \textbf{\textcolor{CVBlack}{Jason Wakim Richards}}
+    }
+
+    % ------------------------------------------------------------------------ %
+    % Contact information
+    % ------------------------------------------------------------------------ %
+
+    \vspace{\KeywordLineSize}
+
+    {
+        \fontsize{\ContactSize}{\ContactLineSize}
+        \selectfont
+        \textcolor{CVBlack}
+        {
+            +44 77 08 348 077
+            \quad\textbar\quad
+            \href{mailto:jason2richards@gmail.com}{jason2richards@gmail.com}
+            \\
+            \href{https://github.com/richarJ2002}{github.com/richarJ2002}
+            \quad\textbar\quad
+            \href{https://www.linkedin.com/in/jason-richards-jwr2002/}
+            {linkedin.com/in/jason-richards-jwr2002/}
+            \quad\textbar\quad
+            \href{https://richarj2002.github.io/personal_website/}{richarj2002.github.io/personal\_website/}
+        }
+    }
+
+\end{center}
+
+\vspace{\HeaderContactToLine}
+\noindent\textcolor{CVBlack}{\rule{\textwidth}{\HeaderLineThickness}}
+
+% -----------------------------------------------------------------------------
+% LETTER DETAILS
+% -----------------------------------------------------------------------------
+
+\vspace{\HeaderLineToDate}
+
+{\fontsize{\MetaSize}{\MetaLineSize}\selectfont
+    \textcolor{CVGray}{11 August 2026}}
+
+\vspace{\DateAfter}
+
+{\fontsize{\MetaSize}{\MetaLineSize}\selectfont
+    \textbf{\textcolor{CVBlack}{Jet Propulsion Laboratory}}\\
+    \textcolor{CVDarkGray}{Multi-Agent Robotics Group}\\
+    \textcolor{CVDarkGray}{Robotic Mobility \& Manipulation Section}}
+
+\vspace{\RecipientAfter}
+
+{\fontsize{\SubjectSize}{\SubjectLineSize}\selectfont
+    \textbf{\textcolor{CVBlack}{Application for Multi-Agent Robotics Fielding Systems Engineer (R5900)}}}
+
+\vspace{\SubjectAfter}
+
+{\fontsize{\BodySize}{\BodyLineSize}\selectfont
+    \textcolor{CVDarkGray}{Dear Hiring Committee,}}
+
+% -----------------------------------------------------------------------------
+% BODY
+% -----------------------------------------------------------------------------
+
+\vspace{\SalutationAfter}
+
+% Everything inside this group uses the configured body font and colour.
+{\fontsize{\BodySize}{\BodyLineSize}\selectfont
+    \color{CVDarkGray}
+
+    \LetterParagraph{%
+        Space exploration has been the defining focus of my career. I have followed
+        JPL's Ingenuity mission closely since its arrival on Mars, and it became the
+        mission that crystallised the direction I wanted my career to take. Ingenuity
+        showed how an aerial robot could extend the reach of planetary exploration,
+        which directly motivated my decision to pursue a PhD in aerial Semantic SLAM.
+        That choice deliberately united my spacecraft and planetary-rover experience
+        with deep, hands-on UAV robotics. The opportunity to help JPL field complex
+        multi-agent aerospace systems for terrestrial and planetary exploration is
+        therefore not simply aligned with my background; it is the goal towards which I
+        have intentionally developed it.%
+    }
+
+    \LetterParagraph{%
+        At Airbus Defence \& Space, I worked in the AOCS/GNC team on autonomous
+        planetary-rover technology and led LiDAR test activities during Integrated
+        BreadBoarding 3 and 4. These time-constrained campaigns supported an end-to-end
+        Sample Fetch Rover concept demonstration at Technology Readiness Level 6. I
+        designed a networked sensor test bench, integrated LiDAR with rover breadboards
+        using ROS over a local wireless network, and collected and analysed campaign
+        data. I also developed C/C++ software on Linux for an offline GNC simulation
+        that generated synthetic imagery and LiDAR scans. This took my work from early
+        feasibility through representative hardware integration and testing within a
+        fast-paced, multidisciplinary team.%
+    }
+
+    \LetterParagraph{%
+        I now develop and deploy autonomous UAV systems in the Autonomous Robotics
+        Group (ARG), in Luxembourg, using ROS 2, PX4, embedded Linux, Raspberry
+        Pi, cameras, IMUs, OpenVINS, Docker, and Kalibr. My work spans Semantic
+        Relational SLAM, localisation, planning, control, simulation, laboratory
+        integration, and flight testing, with the focus on integrating situational
+        awareness into the autonomy pipeline. This includes collaborative missions based
+        on shared semantic maps and multi-robot coordination. Before my PhD, I
+        led the JamSail 3U CubeSat ADCS, developing embedded C software, an EKF
+        for sun-sensor, magnetometer, and IMU fusion, and a C implementation of
+        the IGRF magnetic-field model.%
+    }
+
+    \LetterParagraph{%
+        These experiences match the central challenge of this role: moving research
+        autonomy onto real, networked robotic vehicles and making the complete system
+        work reliably under time pressure. I bring practical experience across
+        ROS/ROS 2, C/C++, Python, embedded Linux, Docker, Raspberry Pi, PX4, sensor and
+        payload integration, localisation, planning, control, communications, hardware,
+        and testing. I also bring the systems judgement and soft skills needed to work
+        across disciplines: translating mission needs into requirements and interfaces,
+        communicating test status and integration issues clearly, and troubleshooting
+        across software, sensors, networks, and hardware. My progression from UKSEDS
+        competition volunteer to Competitions Management Co-Lead, involved coordinating four
+        national competitions with volunteers and industrial partners. This demonstrates
+        that I can take ownership, support others, and deliver against fixed milestones.%
+    }
+
+    \LetterFinalParagraph{%
+        I would be proud to bring this combination of planetary-rover development,
+        embedded UAV autonomy, spacecraft systems engineering, and collaborative
+        leadership to JPL's Multi-Agent Robotics Group. I am motivated by the work
+        required to turn ambitious robotics research into dependable capability on real
+        vehicles, and I would welcome the opportunity to help the team deploy systems
+        that expand what is possible in terrestrial and planetary exploration.%
+    }
+}
+
+% -----------------------------------------------------------------------------
+% CLOSING
+% -----------------------------------------------------------------------------
+
+\vspace{\ClosingBefore}
+
+{\fontsize{\BodySize}{\BodyLineSize}\selectfont
+    \textcolor{CVDarkGray}{Yours sincerely,}}
+
+\vspace{\SignatureSpace}
+
+{\fontsize{\BodySize}{\BodyLineSize}\selectfont
+    \textbf{\textcolor{CVBlack}{Jason Wakim Richards}}}
+
+\end{document}

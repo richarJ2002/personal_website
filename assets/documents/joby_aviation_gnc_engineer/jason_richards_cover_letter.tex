@@ -1,0 +1,325 @@
+% !TeX program = lualatex
+\documentclass[10pt,a4paper]{article}
+
+% ---------------------------------------------------------------------------- %
+% COVER-LETTER LAYOUT GUIDE
+% ---------------------------------------------------------------------------- %
+%
+% This file is designed for the following LaTeX Workshop recipe:
+%     latexmk -lualatex
+%
+% The formatting controls are collected in the VISUAL CONFIGURATION section.
+% In most cases, you should only need to change one of those named values.
+%
+% Common adjustments:
+%   - Page margins:                 geometry values under PACKAGES
+%   - Main body font size:          \BodySize
+%   - Spacing between body lines:   \BodyLineSize
+%   - Spacing between paragraphs:   \ParagraphSpacing
+%   - Space before section titles:  \SectionBefore
+%   - Space after section titles:   \SectionAfter
+%   - Space before the sign-off:    \ClosingBefore
+%
+% All body paragraphs except the final one use \LetterParagraph{...}.
+% The final paragraph uses \LetterFinalParagraph{...}, because the space before
+% "Yours sincerely" is controlled separately by \ClosingBefore.
+
+% ---------------------------------------------------------------------------- %
+% PACKAGES
+% ---------------------------------------------------------------------------- %
+
+% Page margins. Reduce these values to create more usable page space; increase
+% them to add more white space around the letter.
+\usepackage[
+    top=1.35cm,
+    bottom=1.35cm,
+    left=1.7cm,
+    right=1.7cm
+]{geometry}
+
+% Standard TeX font setup shared with the CV. This works with the LuaLaTeX
+% recipe and does not require a separately installed system font.
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[scaled=0.94]{helvet}
+
+% Colour definitions and clickable contact links.
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% Use Helvetica-style sans serif throughout and remove page numbers.
+\renewcommand{\familydefault}{\sfdefault}
+\pagestyle{empty}
+
+% ---------------------------------------------------------------------------- %
+% VISUAL CONFIGURATION
+% ---------------------------------------------------------------------------- %
+
+% -----------------------------------------------------------------------------
+% COLOURS
+% -----------------------------------------------------------------------------
+
+\definecolor{CVBlack}{HTML}{000000}       % Name, titles and important text
+\definecolor{CVDarkGray}{HTML}{333333}    % Main body text
+\definecolor{CVGray}{HTML}{666666}        % Date and secondary details
+\definecolor{CVLightGray}{HTML}{CCCCCC}   % Reserved for subtle dividers
+
+% -----------------------------------------------------------------------------
+% FONT SIZES
+% -----------------------------------------------------------------------------
+
+% Each value controls the visible font size of one part of the letter.
+\newcommand{\NameSize}{20pt}
+\newcommand{\KeywordSize}{8pt}
+\newcommand{\ContactSize}{8pt}
+\newcommand{\MetaSize}{8.8pt}
+\newcommand{\SubjectSize}{10pt}
+\newcommand{\SectionSize}{9.5pt}
+\newcommand{\BodySize}{9.25pt}
+
+% -----------------------------------------------------------------------------
+% LINE SPACING
+% -----------------------------------------------------------------------------
+
+% These values control the baseline-to-baseline distance within each text
+% element. For the body, increase \BodyLineSize to spread lines farther apart.
+\newcommand{\NameLineSize}{20pt}
+\newcommand{\KeywordLineSize}{9pt}
+\newcommand{\ContactLineSize}{8pt}
+\newcommand{\MetaLineSize}{10.5pt}
+\newcommand{\SubjectLineSize}{11.5pt}
+\newcommand{\SectionLineSize}{11pt}
+\newcommand{\BodyLineSize}{12.1pt}
+
+% -----------------------------------------------------------------------------
+% VERTICAL SPACING
+% -----------------------------------------------------------------------------
+
+% Name to specialisms line
+\newcommand{\HeaderNameToKeyword}{8pt}    
+
+% Specialisms line to contact line
+\newcommand{\HeaderKeywordToContact}{5pt} 
+
+% Contact line to horizontal rule
+\newcommand{\HeaderContactToLine}{2pt}    
+
+% Horizontal rule to date
+\newcommand{\HeaderLineToDate}{8pt}       
+
+% Letter-details spacing.
+\newcommand{\DateAfter}{22pt}             % Date to recipient details
+\newcommand{\RecipientAfter}{8pt}         % Recipient details to subject
+\newcommand{\SubjectAfter}{42pt}          % Subject to salutation
+\newcommand{\SalutationAfter}{18pt}       % Salutation to first section
+
+% Body spacing.
+\newcommand{\SectionBefore}{6pt}          % Previous paragraph to heading
+\newcommand{\SectionAfter}{2pt}           % Heading to its first paragraph
+\newcommand{\ParagraphSpacing}{10pt}       % Gap between body paragraphs
+
+% Closing spacing.
+\newcommand{\ClosingBefore}{7pt}          % Final paragraph to sign-off
+\newcommand{\SignatureSpace}{22pt}         % Sign-off to typed name
+
+% Horizontal-rule thickness.
+\newcommand{\HeaderLineThickness}{0.5pt}
+
+% Do not indent paragraphs. Paragraph gaps are inserted explicitly by the
+% helper commands below, so global \parskip remains zero.
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% Make links clickable while keeping them visually consistent with the letter.
+\hypersetup{
+    colorlinks=true,
+    urlcolor=CVBlack,
+    linkcolor=CVBlack
+}
+
+% -----------------------------------------------------------------------------
+% REUSABLE FORMATTING COMMANDS
+% -----------------------------------------------------------------------------
+
+% Section heading used to divide the letter into its four narrative parts.
+% \addvspace prevents adjacent spacing commands from accidentally stacking.
+\newcommand{\LetterSection}[1]{%
+    \par\addvspace{\SectionBefore}%
+    {\fontsize{\SectionSize}{\SectionLineSize}\selectfont
+     \textbf{\textcolor{CVBlack}{#1}}\par}%
+    \addvspace{\SectionAfter}%
+}
+
+% Standard body paragraph. Change only \ParagraphSpacing above to control the
+% visible gap after every paragraph that uses this command.
+\newcommand{\LetterParagraph}[1]{%
+    \noindent #1\par
+    \addvspace{\ParagraphSpacing}%
+}
+
+% Final body paragraph. It deliberately adds no paragraph gap because
+% \ClosingBefore controls the distance to "Yours sincerely".
+\newcommand{\LetterFinalParagraph}[1]{%
+    \noindent #1\par
+}
+
+% ---------------------------------------------------------------------------- %
+% DOCUMENT
+% ---------------------------------------------------------------------------- %
+
+\begin{document}
+
+% -----------------------------------------------------------------------------
+% HEADER
+% -----------------------------------------------------------------------------
+
+\begin{center}
+
+
+    % ------------------------------------------------------------------------ %
+    % Name
+    % ------------------------------------------------------------------------ %
+
+    {
+        \fontsize{\NameSize}{\NameLineSize}\selectfont
+        \textbf{\textcolor{CVBlack}{Jason Wakim Richards}}
+    }
+
+    % ------------------------------------------------------------------------ %
+    % Contact information
+    % ------------------------------------------------------------------------ %
+
+    \vspace{\KeywordLineSize}
+
+    {
+        \fontsize{\ContactSize}{\ContactLineSize}
+        \selectfont
+        \textcolor{CVBlack}
+        {
+            +44 77 08 348 077
+            \quad\textbar\quad
+            \href{mailto:jason2richards@gmail.com}{jason2richards@gmail.com}
+            \\
+            \href{https://github.com/richarJ2002}{github.com/richarJ2002}
+            \quad\textbar\quad
+            \href{https://www.linkedin.com/in/jason-richards-jwr2002/}
+            {linkedin.com/in/jason-richards-jwr2002/}
+            \quad\textbar\quad
+            \href{https://richarj2002.github.io/personal_website/}{richarj2002.github.io/personal\_website/}
+        }
+    }
+
+\end{center}
+
+\vspace{\HeaderContactToLine}
+\noindent\textcolor{CVBlack}{\rule{\textwidth}{\HeaderLineThickness}}
+
+% -----------------------------------------------------------------------------
+% LETTER DETAILS
+% -----------------------------------------------------------------------------
+
+\vspace{\HeaderLineToDate}
+
+{\fontsize{\MetaSize}{\MetaLineSize}\selectfont
+    \textcolor{CVGray}{11 August 2026}}
+
+\vspace{\DateAfter}
+
+{\fontsize{\MetaSize}{\MetaLineSize}\selectfont
+    \textbf{\textcolor{CVBlack}{Joby Aviation}}\\
+    \textcolor{CVDarkGray}{Flight Research}\\
+    \textcolor{CVDarkGray}{California, United States}}
+
+\vspace{\RecipientAfter}
+
+{\fontsize{\SubjectSize}{\SubjectLineSize}\selectfont
+    \textbf{\textcolor{CVBlack}{Application for Guidance, Navigation and Controls Engineer}}}
+
+\vspace{\SubjectAfter}
+
+{\fontsize{\BodySize}{\BodyLineSize}\selectfont
+    \textcolor{CVDarkGray}{Dear Joby Flight Research Hiring Team,}}
+
+% -----------------------------------------------------------------------------
+% BODY
+% -----------------------------------------------------------------------------
+
+\vspace{\SalutationAfter}
+
+% Everything inside this group uses the configured body font and colour.
+{\fontsize{\BodySize}{\BodyLineSize}\selectfont
+    \color{CVDarkGray}
+
+    \LetterParagraph{%
+        I am applying for the Guidance, Navigation and Controls Engineer position in
+        Joby's Flight Research team. Your software-first approach to rapidly developing
+        and flight-testing novel aircraft closely matches the way I have built my
+        experience: combining aircraft dynamics and controls with C/C++ simulation,
+        embedded flight software, real-time signal processing, autonomous UAV
+        integration, and physical testing. I am particularly motivated by the
+        opportunity to deliver well-engineered flight-controls software and use
+        simulation, analysis, and testing to advance aircraft from stabilization toward
+        basic autonomy.%
+    }
+
+    \LetterParagraph{%
+        In the Autonomous Robotics Group at the University of Luxembourg, I develop C++
+        and Python autonomy software for physical UAVs using ROS 2, PX4, embedded Linux,
+        cameras, IMUs, and OpenVINS. My work links perception and state estimation with
+        mapping, planning, and control, and I directly support controlled flight trials.
+        I formulate test plans and evaluate integrated performance and robustness through
+        simulation, laboratory, hardware, and flight testing. Working across software,
+        controls, perception, and vehicle integration has made me comfortable taking
+        ownership of implementation, interface troubleshooting, test analysis, and
+        technical documentation.%
+    }
+
+    \LetterParagraph{%
+        As AOCS/ADCS Lead for the JamSail 3U CubeSat, I translated the concept of
+        operations into requirements, control modes, architecture, interfaces, and a
+        verification plan. I developed embedded C flight software and a C++/CMake Linux
+        simulation of rigid-body attitude dynamics and control, then implemented an EKF,
+        TRIAD attitude determination, and control-state logic. I also performed FFT-based
+        sensor-signal analysis, selected filter cut-off frequencies, implemented digital
+        low-pass filters, and verified their performance in simulation and on hardware.
+        This work strengthened both my closed-loop GNC development and the disciplined
+        software and testing practices required for real-time aerospace systems.%
+    }
+
+    \LetterParagraph{%
+        At Airbus Defence \& Space, I developed C/C++ software on Linux for an offline
+        GNC simulation that generated synthetic camera imagery and LiDAR scans for rapid
+        algorithm development and performance analysis. As lead test engineer for LiDAR
+        activities during Integrated BreadBoarding 3 and 4, I designed an integrated
+        hardware/software test bench, formulated procedures, analyzed campaign data, and
+        supported end-to-end verification at Technology Readiness Level 6. My First-Class
+        MEng further developed my aircraft-dynamics foundation: I achieved 99\% in
+        Dynamics \& Flight Mechanics and built MATLAB tools to analyze longitudinal and
+        lateral motion and dynamic modes against Cranfield flight-test data.%
+    }
+
+    \LetterFinalParagraph{%
+        Joby's small, agile Flight Research team is especially appealing because it
+        requires engineers who can move fluently between dynamics, controls, software,
+        simulation, analysis, and flight test. I would welcome the opportunity to bring
+        that range, together with a strong sense of ownership and collaborative working,
+        to the development and rapid iteration of high-quality flight controls for novel
+        CTOL and VTOL aircraft.%
+    }
+}
+
+% -----------------------------------------------------------------------------
+% CLOSING
+% -----------------------------------------------------------------------------
+
+\vspace{\ClosingBefore}
+
+{\fontsize{\BodySize}{\BodyLineSize}\selectfont
+    \textcolor{CVDarkGray}{Yours sincerely,}}
+
+\vspace{\SignatureSpace}
+
+{\fontsize{\BodySize}{\BodyLineSize}\selectfont
+    \textbf{\textcolor{CVBlack}{Jason Wakim Richards}}}
+
+\end{document}

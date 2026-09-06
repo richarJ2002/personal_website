@@ -1,0 +1,91 @@
+About the job
+Joby Flight Research designs, develops, and flight-tests novel aircraft using a software-first autonomy approach. We build and deploy autonomy, perception, planning, and radar systems across conventional, electric, and hydrogen-electric aircraft in both CTOL and VTOL configurations.
+
+Overview
+
+Joby Aviation’s Flight Research team is looking for an experienced and driven Guidance, Navigation and Controls (GNC) Engineer to contribute to the research and development of new aircraft configurations. We are a small, close-knit and agile team; the engineer will work closely with other software/controls engineers to develop simulation capabilities, control algorithms ranging from stabilization to basic autonomy, and analyses/tests to leverage simulation software for aircraft design and rapid iteration. The engineer will be expected to deliver high quality flight controls software, act with agency, and be capable of picking up a wide variety of tasks.
+
+Responsibilities
+
+ Deliver high quality and well thought out flight controls software (C++) for VTOL and CTOL aircraft. 
+ Contribute heavily to open-loop and closed-loop stability and performance analysis tools (C++/Python). 
+ Formulate test plans to demonstrate robustness and performance of solutions. 
+ Directly support flight testing of various aircraft platforms as a required crewmember in a remote ground station. 
+ Collaborate closely with the rest of the software & controls team to ideate, plan and execute on high quality, well integrated solutions. 
+
+Required
+
+ Expert level understanding of aircraft dynamics 
+ Expert level knowledge of modern control methods including robust control and optimal control. 
+ Experience writing real-time and safety-critical C++ flight software. 
+ Experience developing simulation and tools for linear analysis of dynamic systems (open-loop and closed-loop) 
+ Experience writing C++ and Python in a professional environment. 
+ Experience with real-time signal processing 
+
+This position must meet US export control compliance requirements, therefore a candidate must qualify as a “US Person” as defined by 22 C.F.R.
+
+120.15. “US Person” includes US Citizens, lawful permanent residents, refugees, or asylees. 
+
+ Desired 
+
+ Experience developing flight-test experiments for quantitative characterization of controls performance 
+ Experience with system ID analysis techniques and testing methods 
+ Experience developing flight controls and flight automation algorithms for both CTOL and VTOL aircraft 
+ Experience with automatic differentiation tools 
+
+Compensation at Joby is a combination of base pay and Restricted Stock Units (RSUs). The target base pay for this position is $149,000 - $206,000/yr . The compensation package will be determined by job-related knowledge, skills, and experience.
+
+Joby also offers a comprehensive benefits package, including paid time off, healthcare benefits, a 401(k) plan with a company match, an employee stock purchase plan (ESPP), short-term and long-term disability coverage, life insurance, and more.
+
+Additional Information
+
+Joby Aviation is an equal opportunity employer.
+
+Benefits found in job post
+
+401(k), Disability insurance
+
+Unlock hiring insights on Joby Aviation
+34%
+
+employee growth
+
+Chart
+Chart with 25 data points.
+The chart has 1 X axis displaying Time. Data ranges from 2024-08-01 00:00:00 to 2026-08-01 00:00:00.
+The chart has 1 Y axis displaying values. Data ranges from 1597 to 2142.
+End of interactive chart.
+Applicant education level
+
+36%
+
+have a Master of Science
+
+Applicant seniority level
+
+48%
+
+Entry level applicants
+
+Reactivate Premium
+Cancel anytime. No hidden fees.
+
+About the company
+
+Joby Aviation
+
+190,078 followers
+
+
+Follow
+Airlines and Aviation
+
+ • 
+
+1001-5000 employees
+
+ • 
+
+2,031 on LinkedIn
+
+Joby is a California-based company building quiet, all-electric aircraft to connect people like never before. Quiet as a conversation and with the ability to take off and land vertically, the Joby aircraft will change the way we move while reducing the acoustic and climate footprint of flight.
