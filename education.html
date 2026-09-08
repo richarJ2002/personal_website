@@ -1,13 +1,24 @@
-  <title>Education — Jason Wakim Richards</title>
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Education - Jason Wakim Richards</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Educational background of Jason Wakim Richards, Doctoral Researcher at SnT, University of Luxembourg.">
+  <meta name="description"
+    content="Educational background of Jason Wakim Richards, Doctoral Researcher at SnT, University of Luxembourg.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="icon" href="assets/images/favicon-512x512.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon-512x512.png">
   <link rel="stylesheet" href="css/style.css">
-  <script>(function(){const s=localStorage.getItem('theme'),d=window.matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.dataset.theme=s?s==='dark':d})();</script>
+  <script>(function () { const s = localStorage.getItem('theme'), d = window.matchMedia('(prefers-color-scheme:dark)').matches; document.documentElement.dataset.theme = s ? s === 'dark' : d })();</script>
 </head>
+
 <body>
   <header class="site-header">
     <nav class="nav" aria-label="Main navigation">
@@ -15,14 +26,17 @@
         <li><a href="index.html"><i class="bi bi-house-door-fill" aria-hidden="true"></i> Home</a></li>
         <li><a href="about.html"><i class="bi bi-person-fill" aria-hidden="true"></i> About</a></li>
         <li><a href="research.html"><i class="bi bi-cpu-fill" aria-hidden="true"></i> Research</a></li>
-        <li><a href="publications.html"><i class="bi bi-file-earmark-text-fill" aria-hidden="true"></i> Publications</a></li>
+        <li><a href="publications.html"><i class="bi bi-file-earmark-text-fill" aria-hidden="true"></i> Publications</a>
+        </li>
         <li><a href="projects.html"><i class="bi bi-tools" aria-hidden="true"></i> Projects</a></li>
         <li><a href="experience.html"><i class="bi bi-briefcase-fill" aria-hidden="true"></i> Experience</a></li>
-        <li><a href="education.html" aria-current="page"><i class="bi bi-mortarboard-fill" aria-hidden="true"></i> Education</a></li>
+        <li><a href="education.html" aria-current="page"><i class="bi bi-mortarboard-fill" aria-hidden="true"></i>
+            Education</a></li>
         <li><a href="cv.html"><i class="bi bi-file-earmark-person-fill" aria-hidden="true"></i> CV</a></li>
         <li><a href="contact.html"><i class="bi bi-envelope-fill" aria-hidden="true"></i> Contact</a></li>
       </ul>
-      <button id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" class="theme-toggle">
+      <button id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false"
+        class="theme-toggle">
         <span aria-hidden="true" class="icon-sun" data-dark-hidden>☀</span>
         <span aria-hidden="true" class="icon-moon" data-light-hidden>☾</span>
       </button>
@@ -34,30 +48,37 @@
         <h1>Education</h1>
         <p class="lead">Academic degrees and qualifications in reverse chronological order.</p>
       </header>
-      <section>
-        <h2>Degrees</h2>
+      <section id="degrees" aria-labelledby="degrees-heading">
+        <h2 id="degrees-heading">Degrees</h2>
         <article class="education-entry">
           <header>
-            <h3>MEng Aerospace Engineering — First-Class Honours</h3>
+            <h3>MEng Aerospace Engineering - First-Class Honours</h3>
             <p class="education-meta">
               <span class="institution">University of Nottingham</span>
               <span class="location">Nottingham, UK</span>
-              <span class="dates"><time datetime="2020-09">Sep 2020</time> – <time datetime="2025-08">Aug 2025</time></span>
+              <span class="dates"><time datetime="2020-09">Sep 2020</time> – <time datetime="2025-08">Aug
+                  2025</time></span>
             </p>
           </header>
           <dl>
             <dt>Thesis</dt>
-            <dd>MEng Individual Project: Investigating advanced topics in aerospace control systems and autonomous vehicle dynamics</dd>
+            <dd>MEng Individual Project: Investigating advanced topics in aerospace control systems and autonomous
+              vehicle dynamics</dd>
             <dt>Advisor</dt>
             <dd>Prof. Chantal Cappelletti</dd>
             <dt>Research Focus</dt>
-            <dd>Aerospace control systems, flight dynamics, avionics, spacecraft systems, modeling, optimization, and simulation</dd>
+            <dd>Aerospace control systems, flight dynamics, avionics, spacecraft systems, modeling, optimization, and
+              simulation</dd>
             <dt>Relevant Coursework</dt>
-            <dd>Dynamics & Flight Mechanics (99%), Avionics Systems (91%), Introduction to Space (83%)</dd>
+            <dd>Dynamics &amp; Flight Mechanics (99%), Avionics Systems (91%), Introduction to Space (83%)</dd>
             <dt>Applied</dt>
-            <dd>C/C++, Python, MATLAB, Simulink, and Linux to state estimation, control, flight-mechanics analysis, and autonomous-system projects</dd>
+            <dd>C/C++, Python, MATLAB, Simulink, and Linux to state estimation, control, flight-mechanics analysis, and
+              autonomous-system projects</dd>
           </dl>
         </article>
+      </section>
+      <section id="professional-training" aria-labelledby="training-heading">
+        <h2 id="training-heading">Professional Training</h2>
         <article class="education-entry">
           <header>
             <h3>IEEE RAS Summer School on Multi-Robot Systems</h3>
@@ -66,41 +87,66 @@
               <span class="location">Prague, Czechia</span>
               <span class="dates"><time datetime="2026-07">Jul 2026</time></span>
             </p>
-          </article>
-          <article class="education-entry">
-            <header>
-              <h3>Space Resources & Robotics Summer School</h3>
-              <p class="education-meta">
-                <span class="institution">AGH University of Kraków</span>
-                <span class="location">Krakow, Poland</span>
-                <span class="dates"><time datetime="2026-05">May 2026</time></span>
-              </p>
-            </article>
-            <article class="education-entry">
-              <header>
-                <h3>ESA Academy Space Systems Engineering Training Course</h3>
-                <p class="education-meta">
-                  <span class="institution">ESA Academy</span>
-                  <span class="location">Transinne, Belgium</span>
-                  <span class="dates"><time datetime="2025-05">May 2025</time></span>
-                </p>
-              </article>
-            </section>
-          </section>
+            <figure>
+              <img src="assets/certificates/jason-richards-ieee-ras-multi-robot-systems-workshop-certificate.jpeg"
+                alt="IEEE RAS Multi-Robot Systems Workshop Certificate" loading="lazy" width="60%">
+              <figcaption>IEEE RAS Multi-Robot Systems Workshop Certificate</figcaption>
+            </figure>
+          </header>
         </article>
-      </section>
-      <section>
-        <h2>Workshops</h2>
-        </ul>
+        <article class="education-entry">
+          <header>
+            <h3>Space Resources &amp; Robotics Workshop</h3>
+            <p class="education-meta">
+              <span class="institution">AGH University of Kraków</span>
+              <span class="location">Krakow, Poland</span>
+              <span class="dates"><time datetime="2026-05">May 2026</time></span>
+            </p>
+            <figure>
+              <img src="
+            assets/certificates/jason-richards-universeh-spring-school-space-resources-and-robotics-certificate.jpeg"
+                alt="Universeh Space Resources and Robotics Workshop Certificate" loading="eager" width="60%">
+              <figcaption>Universeh Space Resources and Robotics Workshop Certificate</figcaption>
+            </figure>
+          </header>
+        </article>
+        <article class="education-entry">
+          <header>
+            <h3>Universeh Space is all Around Workshop</h3>
+            <p class="education-meta">
+              <span class="institution">University of Namur</span>
+              <span class="location">Libin, Belgium</span>
+              <span class="dates"><time datetime="2026-07">April 2026</time></span>
+            </p>
+            <figure>
+              <img src="assets/certificates/jason-richards-space-is-all-around-workshop-certificate.jpeg"
+                alt="Universeh Space is all Around Certificate" loading="lazy" width="60%">
+              <figcaption>Universeh Space is all Around Certificate</figcaption>
+            </figure>
+          </header>
+        </article>
+        <article class="education-entry">
+          <header>
+            <h3>ESA Academy Space Systems Engineering Training Course</h3>
+            <p class="education-meta">
+              <span class="institution">ESA Academy</span>
+              <span class="location">Transinne, Belgium</span>
+              <span class="dates"><time datetime="2025-05">May 2025</time></span>
+            </p>
+          </header>
+        </article>
       </section>
     </article>
   </main>
   <footer class="site-footer">
     <div class="container">
       <div class="footer-contact">
-        <a href="mailto:jason2richards@uni.lu" rel="noopener noreferrer"><i class="bi bi-envelope-fill" aria-hidden="true"></i> jason2richards@uni.lu</a>
-        <a href="https://github.com/richarJ2002" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i> GitHub: richarJ2002</a>
-        <a href="https://linkedin.com/in/jason-richards-jwr2002/" rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i> LinkedIn: jason-richards-jwr2002</a>
+        <a href="mailto:jason2richards@uni.lu" rel="noopener noreferrer"><i class="bi bi-envelope-fill"
+            aria-hidden="true"></i> jason2richards@uni.lu</a>
+        <a href="https://github.com/richarJ2002" rel="noopener noreferrer"><i class="bi bi-github"
+            aria-hidden="true"></i> GitHub: richarJ2002</a>
+        <a href="https://linkedin.com/in/jason-richards-jwr2002/" rel="noopener noreferrer"><i class="bi bi-linkedin"
+            aria-hidden="true"></i> LinkedIn: jason-richards-jwr2002</a>
       </div>
       <p>&copy; <span id="year"></span> Jason Wakim Richards</p>
     </div>
@@ -108,4 +154,5 @@
   <script src="js/theme.js"></script>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
+
 </html>

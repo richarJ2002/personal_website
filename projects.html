@@ -1,10 +1,16 @@
-  <title>Projects — Jason Wakim Richards</title>
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+  <title>Projects - Jason Wakim Richards</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Robotics projects and software development work by Jason Wakim Richards.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="icon" href="assets/images/favicon-512x512.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon-512x512.png">
   <link rel="stylesheet" href="css/style.css">
   <script>(function(){const s=localStorage.getItem('theme'),d=window.matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.dataset.theme=s?s==='dark':d})();</script>
 </head>
@@ -38,7 +44,25 @@
         <h2>Robotics Software Projects</h2>
         <article class="project">
           <header>
-            <h3>JamSail 3U CubeSat — AOCS/ADCS Lead</h3>
+            <h3>Semantic Relational SLAM for Autonomous UAVs (PhD)</h3>
+            <p class="project-meta">
+              <span class="project-role">Doctoral Researcher</span>
+              <span class="project-dates"><time datetime="2025-11">Nov 2025</time> – Present</span>
+            </p>
+          </header>
+          <p>Developing C++ and Python software for Semantic Relational SLAM and autonomous UAV systems, linking camera–IMU state estimation, perception, semantic mapping, navigation, planning, and control. Integrating and deploying onboard autonomy on physical UAVs using ROS 2, PX4, embedded Linux, and visual–inertial odometry, with evaluation from simulation to flight testing.</p>
+          <dl class="project-details">
+            <dt>Stack</dt>
+            <dd><code>C++</code> <code>Python</code> <code>ROS 2</code> <code>PX4</code> <code>Docker</code> <code>OpenVINS</code> <code>Kalibr</code></dd>
+            <dt>Repository</dt>
+            <dd>(PhD research — see <a href="research.html#current-research">current research</a>)</dd>
+            <dt>Status</dt>
+            <dd>Ongoing</dd>
+          </dl>
+        </article>
+        <article class="project">
+          <header>
+            <h3>JamSail 3U CubeSat - AOCS/ADCS Lead</h3>
             <p class="project-meta">
               <span class="project-role">Lead Developer</span>
               <span class="project-dates"><time datetime="2024-09">Sep 2024</time> – <time datetime="2025-08">Aug 2025</time></span>
@@ -49,14 +73,15 @@
             <dt>Stack</dt>
             <dd><code>C</code> <code>C++</code> <code>CMake</code> <code>Linux</code> <code>EKF</code> <code>TRIAD</code> <code>IGRF</code> <code>ECSS</code></dd>
             <dt>Repository</dt>
-            <dd><a href="https://github.com/richarJ2002/NBodySimulator" rel="noopener noreferrer">github.com/richarJ2002/NBodySimulator</a> <span aria-hidden="true">↗</span></dd>
+            <dd><a href="assets/documents/papers/jason_richards_design_and_simulation_of_jamsail_adcs.pdf">JamSail ADCS design report (PDF)</a></dd>
+            <!-- TODO: Add JamSail repository URL when public -->
             <dt>Status</dt>
             <dd>Completed Aug 2025</dd>
           </dl>
         </article>
         <article class="project">
           <header>
-            <h3>IDET-Sat — Systems Engineer</h3>
+            <h3>IDET-Sat - Systems Engineer</h3>
             <p class="project-meta">
               <span class="project-role">Contributor</span>
               <span class="project-dates"><time datetime="2022-09">Sep 2022</time> – <time datetime="2023-07">Jul 2023</time></span>
@@ -79,7 +104,7 @@
           <header>
             <h3>Airbus GNC Test Bench & Simulation</h3>
             <p class="project-meta">
-              <span class="project-role">Software Engineer (Intern)</span>
+              <span class="project-role">AOCS/GNC Engineer Intern</span>
               <span class="project-dates"><time datetime="2023-07">Jul 2023</time> – <time datetime="2024-08">Aug 2024</time></span>
             </p>
           </header>
@@ -95,14 +120,6 @@
         </article>
       </section>
     </article>
-    <section class="cv-section">
-      <h2>Workshops</h2>
-      <ul>
-        <li>IEEE RAS Summer School on Multi-Robot Systems, 2026</li>
-        <li>Space Resources & Robotics Summer School, 2026</li>
-        <li>ESA Academy Space Systems Engineering Training Course, 2025</li>
-      </ul>
-    </section>
   </main>
   <footer class="site-footer">
     <div class="container">

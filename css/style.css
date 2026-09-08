@@ -77,6 +77,13 @@ html {
   font-size: 16px;
   /* Smooth scroll for anchor links, respecting reduced motion preference */
   scroll-behavior: smooth;
+  /* Offset anchored sections below the sticky header */
+  scroll-padding-top: 5rem;
+}
+
+/* Anchor targets: offset below sticky header */
+:target {
+  scroll-margin-top: 5rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -95,6 +102,7 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: left;
 }
 
 /* ==========================================================================
