@@ -1,96 +1,196 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-  <title>Experience - Jason Wakim Richards</title>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Professional work experience of Jason Wakim Richards, Doctoral Researcher at SnT, University of Luxembourg.">
+  <title>Experience - Jason Richards</title>
+  <meta name="description" content="Professional experience, student project leadership, and volunteering of Jason Wakim Richards across robotics, GNC, and space systems.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="icon" href="assets/images/favicon-512x512.png">
-  <link rel="apple-touch-icon" href="assets/images/favicon-512x512.png">
   <link rel="stylesheet" href="css/style.css">
-  <script>(function(){const s=localStorage.getItem('theme'),d=window.matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.dataset.theme=s?s==='dark':d})();</script>
+  <script src="js/theme.js"></script>
+  <script src="js/navigation.js" defer></script>
+  <script src="js/evidence.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
-    <nav class="nav" aria-label="Main navigation">
-      <ul class="nav-links">
-        <li><a href="index.html"><i class="bi bi-house-door-fill" aria-hidden="true"></i> Home</a></li>
-        <li><a href="about.html"><i class="bi bi-person-fill" aria-hidden="true"></i> About</a></li>
-        <li><a href="research.html"><i class="bi bi-cpu-fill" aria-hidden="true"></i> Research</a></li>
-        <li><a href="publications.html"><i class="bi bi-file-earmark-text-fill" aria-hidden="true"></i> Publications</a></li>
-        <li><a href="projects.html"><i class="bi bi-tools" aria-hidden="true"></i> Projects</a></li>
-        <li><a href="experience.html" aria-current="page"><i class="bi bi-briefcase-fill" aria-hidden="true"></i> Experience</a></li>
-        <li><a href="education.html"><i class="bi bi-mortarboard-fill" aria-hidden="true"></i> Education</a></li>
-        <li><a href="cv.html"><i class="bi bi-file-earmark-person-fill" aria-hidden="true"></i> CV</a></li>
-        <li><a href="contact.html"><i class="bi bi-envelope-fill" aria-hidden="true"></i> Contact</a></li>
-      </ul>
-      <button id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" class="theme-toggle">
-        <span aria-hidden="true" class="icon-sun" data-dark-hidden>☀</span>
-        <span aria-hidden="true" class="icon-moon" data-light-hidden>☾</span>
-      </button>
-    </nav>
+    <div class="container header-inner">
+      <button id="nav-toggle" class="menu-toggle" type="button" hidden aria-expanded="false" aria-controls="page-nav">Menu</button>
+      <nav aria-label="Main navigation">
+        <ul id="page-nav" class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><details class="nav-group">
+            <summary>Research</summary>
+            <ul class="nav-submenu">
+              <li><a href="research.html">Research overview</a></li>
+              <li><a href="publications.html">Publications</a></li>
+            </ul>
+          </details></li>
+          <li><details class="nav-group is-current">
+            <summary>Background</summary>
+            <ul class="nav-submenu">
+              <li><a href="about.html">About</a></li>
+              <li><a href="experience.html" aria-current="page">Experience</a></li>
+              <li><a href="education.html">Education</a></li>
+            </ul>
+          </details></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" type="button" hidden aria-label="Switch to dark mode" aria-pressed="false"><span aria-hidden="true">◐</span></button>
+    </div>
   </header>
-  <main>
-    <article class="container">
-      <header>
-        <h1>Experience</h1>
-        <p class="lead">Professional positions, research appointments, and industry experience in reverse chronological order.</p>
-      </header>
-      <section>
-        <h2>Professional Experience</h2>
-        <article class="experience-entry">
-          <header>
-            <h3>Doctoral Researcher – Autonomous UAV Systems</h3>
-            <p class="experience-meta">
-              <span class="org">SnT, University of Luxembourg</span>
-              <span class="location">Kirchberg, Luxembourg</span>
-              <span class="dates"><time datetime="2025-11">Nov 2025</time> – Present</span>
-            </p>
-          </header>
-          <ul>
-            <li>Develop C++ and Python software for Semantic Relational SLAM and autonomous UAV systems, linking camera–IMU state estimation, perception, semantic mapping, navigation, planning, and control.</li>
-            <li>Integrate, debug, and deploy onboard autonomy on physical UAVs using ROS 2, PX4, embedded Linux, Raspberry Pi, camera/IMU sensing, and OpenVINS visual–inertial odometry.</li>
-            <li>Evaluate algorithm and system performance through simulation, laboratory, hardware, and flight testing; analyze estimation and autonomy data and trace failures across software, sensors, and vehicle interfaces.</li>
-            <li>Build reproducible Docker-based development, deployment, and camera–IMU calibration workflows with Kalibr.</li>
-            <li>Research fleet-level and multi-vehicle coordination using shared semantic maps, resource-efficient navigation, and mission-aware collaborative planning.</li>
-          </ul>
-        </article>
-        <article class="experience-entry">
-          <header>
-            <h3>AOCS/GNC Engineer Intern</h3>
-            <p class="experience-meta">
-              <span class="org">Airbus Defence & Space</span>
-              <span class="location">Stevenage, UK</span>
-              <span class="dates"><time datetime="2023-07">Jul 2023</time> – <time datetime="2024-08">Aug 2024</time></span>
-            </p>
-          </header>
-          <ul>
-            <li>Led LiDAR test activities during Integrated BreadBoarding (iBB) 3 &amp; 4 campaigns, supporting an end-to-end Sample Fetch Rover concept-of-operations demonstration at Technology Readiness Level 6.</li>
-            <li>Designed a networked sensor test bench, integrated LiDAR with rover breadboards using ROS over a local wireless network, executed test procedures, and collected and analyzed campaign performance data.</li>
-            <li>Developed and debugged C/C++ software on Linux for an offline GNC simulation, coupling a natural-scene generator to produce synthetic imagery and LiDAR scans for algorithm development and performance evaluation.</li>
-            <li>Investigated terrain generation, LiDAR/radar sensor modeling, and Vector Field Histogram planning for lunar-rover applications, connecting simulation assumptions to navigation performance.</li>
-            <li>Delivered software and hardware integration in a fast-paced Agile team using Git/GitLab, Jira, and Confluence; documented test status and resolved issues across GNC, simulation, sensors, and vehicle hardware.</li>
-          </ul>
-          <p>See <a href="projects.html">Projects</a> for student-team CubeSat systems work.</p>
-        </article>
-      </section>
-    </article>
-  </main>
-  <footer class="site-footer">
+  <main id="main-content" tabindex="-1">
     <div class="container">
-      <div class="footer-contact">
-        <a href="mailto:jason2richards@uni.lu" rel="noopener noreferrer"><i class="bi bi-envelope-fill" aria-hidden="true"></i> jason2richards@uni.lu</a>
-        <a href="https://github.com/richarJ2002" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i> GitHub: richarJ2002</a>
-        <a href="https://linkedin.com/in/jason-richards-jwr2002/" rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i> LinkedIn: jason-richards-jwr2002</a>
+      <header class="page-intro">
+        <p class="eyebrow">Background / 03</p>
+        <h1>Experience</h1>
+        <p class="lead">Professional roles, student project leadership, and volunteering, in reverse chronological order.</p>
+      </header>
+      <section class="section" aria-labelledby="experience-professional-heading">
+        <div class="section-heading">
+          <h2 id="experience-professional-heading">Professional roles</h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-entry">
+            <p class="timeline-date"><time datetime="2025-11">Nov 2025</time> - present</p>
+            <div class="timeline-body">
+              <h3>Doctoral researcher</h3>
+              <p>SnT, University of Luxembourg, Kirchberg</p>
+              <ul class="detail-list">
+                <li>Developing semantic relational SLAM and situational-awareness architectures for UAVs in C++ and Python.</li>
+                <li>Working with ROS 2, PX4, and OpenVINS on embedded Linux with Raspberry Pi camera and IMU sensing.</li>
+                <li>Using Docker-based tooling and Kalibr calibration across simulation, laboratory, hardware, and flight testing.</li>
+                <li>Pursuing collaborative missions based on shared semantic maps, resource-efficient navigation, and mission-aware coordination as a research direction.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="timeline-entry">
+            <p class="timeline-date"><time datetime="2023-07">Jul 2023</time> - <time datetime="2024-08">Aug 2024</time></p>
+            <div class="timeline-body">
+              <h3>AOCS/GNC engineer intern</h3>
+              <p>Airbus Defence and Space, Stevenage, UK</p>
+              <ul class="detail-list">
+                <li>Led LiDAR test activities on breadboards iBB3 and iBB4 in support of a Sample Fetch Rover concept-of-operations demonstration at Technology Readiness Level 6.</li>
+                <li>Built a networked ROS LiDAR bench running over local wireless; executed test procedures and collected and analysed campaign performance data.</li>
+                <li>Developed offline GNC in C and C++ on Linux with a scene generator producing synthetic images and scans.</li>
+                <li>Investigated terrain generation, LiDAR and radar sensor modelling, and Vector Field Histogram planning for lunar-rover navigation.</li>
+                <li>Worked in an Agile team using Git/GitLab, Jira, and Confluence, documenting test status and resolving software, sensor, and hardware integration issues.</li>
+              </ul>
+              <div class="evidence-grid">
+                <figure class="evidence-figure">
+                  <a href="assets/images/ibb4-group-photo.jpeg" data-evidence="ibb4-caption"><img src="assets/images/ibb4-group-photo-480w.jpeg" srcset="assets/images/ibb4-group-photo-480w.jpeg 480w, assets/images/ibb4-group-photo.jpeg 800w" sizes="(max-width: 56rem) calc(100vw - 3rem), 24rem" width="800" height="996" alt="Airbus iBB4 field-test team beside the rover" loading="lazy" decoding="async"></a>
+                  <figcaption id="ibb4-caption">iBB4 field-test team · Airbus Defence and Space.</figcaption>
+                </figure>
+                <figure class="evidence-figure">
+                  <a href="assets/images/ibb4-newspaper-clipping.jpeg" data-evidence="clipping-caption"><img src="assets/images/ibb4-newspaper-clipping-480w.jpeg" srcset="assets/images/ibb4-newspaper-clipping-480w.jpeg 480w, assets/images/ibb4-newspaper-clipping.jpeg 800w" sizes="(max-width: 56rem) calc(100vw - 3rem), 24rem" width="800" height="962" alt="Newspaper clipping about rover field trials in Leighton Buzzard" loading="lazy" decoding="async"></a>
+                  <figcaption id="clipping-caption">Newspaper coverage of the rover field trials · supplied clipping, not an article authored by me.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="section" aria-labelledby="experience-leadership-heading">
+        <div class="section-heading">
+          <h2 id="experience-leadership-heading">Project leadership</h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-entry">
+            <p class="timeline-date"><time datetime="2024-09">Sep 2024</time> - <time datetime="2025-08">Aug 2025</time></p>
+            <div class="timeline-body">
+              <h3>AOCS/ADCS lead, JamSail 3U CubeSat</h3>
+              <p>NottSpace, University of Nottingham</p>
+              <ul class="detail-list">
+                <li>Owned subsystem requirements, interfaces, and the verification plan.</li>
+                <li>Wrote embedded C flight software for the mission.</li>
+                <li>Developed NBodySimulator to simulate and test JamSail ADCS, with EKF fusion of sun-sensor, magnetometer and IMU data and a sun-sensing algorithm.</li>
+                <li>Studied TRIAD but rejected it due to noise sensitivity; selected sun-visible operation with the Kalman Filter to meet payload requirements at lowest cost.</li>
+                <li>Implemented IGRF myself for magnetic-field modelling, alongside FFT-based signal analysis and low-pass filtering.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="timeline-entry">
+            <p class="timeline-date"><time datetime="2022-09">Sep 2022</time> - <time datetime="2023-07">Jul 2023</time></p>
+            <div class="timeline-body">
+              <h3>Systems engineer, IDET-Sat CubeSat</h3>
+              <p>Nottingham Space Society student-led CubeSat team</p>
+              <ul class="detail-list">
+                <li>Worked on requirements, system architecture, subsystem interfaces, and breakdown structures.</li>
+                <li>Worked with Raspberry Pi on Linux alongside microcontrollers, IMUs, and cameras.</li>
+                <li>Part of a 12-person team that achieved a top-four finish among 12 UK teams in the UKSEDS Satellite Design Competition.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="section" aria-labelledby="experience-volunteering-heading">
+        <div class="section-heading">
+          <h2 id="experience-volunteering-heading">Volunteering</h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-entry">
+            <p class="timeline-date"><time datetime="2024-09">Sep 2024</time> - <time datetime="2026-09">Sep 2026</time></p>
+            <div class="timeline-body">
+              <h3>Competitions Management Co-Lead</h3>
+              <p>UKSEDS</p>
+              <ul class="detail-list">
+                <li>Began as an Olympus Rover Trials volunteer, then served as Competitions Management Co-Lead.</li>
+                <li>Covered four competitions - ORT, SDC, ISAM, and NRC - across volunteer coordination, schedules, documentation, and partners.</li>
+              </ul>
+              <div class="evidence-grid">
+                <figure class="evidence-figure">
+                  <a href="assets/images/ukseds-ort-2024.jpeg" data-evidence="ort-2024-caption"><img src="assets/images/ukseds-ort-2024-480w.jpeg" srcset="assets/images/ukseds-ort-2024-480w.jpeg 480w, assets/images/ukseds-ort-2024.jpeg 800w" sizes="(max-width: 56rem) calc(100vw - 3rem), 24rem" width="800" height="533" alt="Olympus Rover Trials volunteers at the rover test area in 2024" loading="lazy" decoding="async"></a>
+                  <figcaption id="ort-2024-caption">Olympus Rover Trials volunteering · 2024.</figcaption>
+                </figure>
+                <figure class="evidence-figure">
+                  <a href="assets/images/ukseds-ort-2025.jpeg" data-evidence="ort-caption"><img src="assets/images/ukseds-ort-2025.jpeg" width="480" height="320" alt="UKSEDS Olympus Rover Trials volunteers at the test venue" loading="lazy" decoding="async"></a>
+                  <figcaption id="ort-caption">Olympus Rover Trials volunteering · 2025.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+  <dialog id="evidence-viewer" aria-labelledby="evidence-title" aria-describedby="evidence-caption">
+    <div class="viewer-controls">
+      <h2 id="evidence-title">Image preview</h2>
+      <button type="button" class="button-secondary" data-viewer-close>Close</button>
+    </div>
+    <div class="viewer-media" data-viewer-media aria-busy="false"></div>
+    <p role="status"></p>
+    <p id="evidence-caption"></p>
+    <a class="button-secondary" data-viewer-original>Open original</a>
+  </dialog>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-name">Jason Wakim Richards</p>
+        <p>Aerospace engineering · Robotics · GNC</p>
+        <p class="footer-small"><small>© <span data-year>2026</span> Jason Wakim Richards</small></p>
       </div>
-      <p>&copy; <span id="year"></span> Jason Wakim Richards</p>
+      <nav aria-label="More pages">
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="publications.html">Publications</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Profiles">
+        <ul class="footer-links">
+          <li><a href="https://github.com/richarJ2002">GitHub profile</a></li>
+          <li><a href="https://www.linkedin.com/in/jason-richards-jwr2002/">LinkedIn profile</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </div>
   </footer>
-  <script src="js/theme.js"></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

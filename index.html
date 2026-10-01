@@ -1,89 +1,283 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jason Wakim Richards - Doctoral Researcher, Autonomous UAV Systems</title>
-  <meta name="description" content="Personal website of Jason Wakim Richards, Doctoral Researcher at SnT, University of Luxembourg. Research, projects, and professional experience in autonomous UAV systems and Semantic Relational SLAM.">
+  <title>Jason Wakim Richards - Autonomy, from models to missions</title>
+  <meta name="description" content="Jason Wakim Richards: aerospace and GNC engineer and doctoral researcher linking estimation, simulation and deployed robotics. Lunar rover autonomy, entry simulation and CubeSat ADCS.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="icon" href="assets/images/favicon-512x512.png">
-  <link rel="apple-touch-icon" href="assets/images/favicon-512x512.png">
   <link rel="stylesheet" href="css/style.css">
-  <script>(function(){const s=localStorage.getItem('theme'),d=window.matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.dataset.theme=s?s==='dark':d})();</script>
+  <script src="js/theme.js"></script>
+  <script src="js/navigation.js" defer></script>
+  <script src="js/evidence.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
-    <nav class="nav" aria-label="Main navigation">
-      <ul class="nav-links">
-        <li><a href="index.html" aria-current="page"><i class="bi bi-house-door-fill" aria-hidden="true"></i> Home</a></li>
-        <li><a href="about.html"><i class="bi bi-person-fill" aria-hidden="true"></i> About</a></li>
-        <li><a href="research.html"><i class="bi bi-cpu-fill" aria-hidden="true"></i> Research</a></li>
-        <li><a href="publications.html"><i class="bi bi-file-earmark-text-fill" aria-hidden="true"></i> Publications</a></li>
-        <li><a href="projects.html"><i class="bi bi-tools" aria-hidden="true"></i> Projects</a></li>
-        <li><a href="experience.html"><i class="bi bi-briefcase-fill" aria-hidden="true"></i> Experience</a></li>
-        <li><a href="education.html"><i class="bi bi-mortarboard-fill" aria-hidden="true"></i> Education</a></li>
-        <li><a href="cv.html"><i class="bi bi-file-earmark-person-fill" aria-hidden="true"></i> CV</a></li>
-        <li><a href="contact.html"><i class="bi bi-envelope-fill" aria-hidden="true"></i> Contact</a></li>
-      </ul>
-      <button id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" class="theme-toggle">
-        <span aria-hidden="true" class="icon-sun" data-dark-hidden>☀</span>
-        <span aria-hidden="true" class="icon-moon" data-light-hidden>☾</span>
-      </button>
-    </nav>
+    <div class="container header-inner">
+      <button id="nav-toggle" class="menu-toggle" type="button" hidden aria-expanded="false" aria-controls="page-nav">Menu</button>
+      <nav aria-label="Main navigation">
+        <ul id="page-nav" class="nav-links">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><details class="nav-group">
+            <summary>Research</summary>
+            <ul class="nav-submenu">
+              <li><a href="research.html">Research overview</a></li>
+              <li><a href="publications.html">Publications</a></li>
+            </ul>
+          </details></li>
+          <li><details class="nav-group">
+            <summary>Background</summary>
+            <ul class="nav-submenu">
+              <li><a href="about.html">About</a></li>
+              <li><a href="experience.html">Experience</a></li>
+              <li><a href="education.html">Education</a></li>
+            </ul>
+          </details></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" type="button" hidden aria-label="Switch to dark mode" aria-pressed="false"><span aria-hidden="true">◐</span></button>
+    </div>
   </header>
-  <main>
-    <section class="hero" aria-labelledby="home-heading">
-      <div class="container">
-        <h1 id="home-heading">Jason Wakim Richards</h1>
-        <p class="role">Doctoral Researcher – Autonomous UAV Systems</p>
-        <p class="summary">I develop Semantic Relational SLAM and autonomy software for UAVs at SnT, University of Luxembourg, integrating camera–IMU estimation, perception, planning, and control on physical platforms. My background spans GNC engineering at Airbus Defence &amp; Space and CubeSat ADCS leadership.</p>
-        <figure>
-          <img src="assets/images/headshot.jpeg" alt="Jason Wakim Richards professional headshot" loading="eager" fetchpriority="high">
-          <figcaption>Professional headshot</figcaption>
+
+  <main id="main-content" tabindex="-1">
+    <section class="hero" aria-labelledby="home-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Jason Wakim Richards</p>
+          <h1 id="home-title">Autonomy, from models to missions.</h1>
+          <p class="lead">I am an aerospace engineer and doctoral researcher working in guidance, navigation and control (GNC). I connect estimation, simulation, and deployed robotics - from filter design and physics models to lab and field testing.</p>
+          <p class="hero-role">Currently a doctoral researcher at SnT, University of Luxembourg, working on Semantic Relational SLAM for UAVs with ROS&nbsp;2 and PX4.</p>
+          <div class="hero-actions">
+            <a class="button" href="projects.html">View projects</a>
+            <a class="button-secondary" href="contact.html">Get in touch</a>
+            <a class="button-secondary" href="https://github.com/richarJ2002">GitHub profile</a>
+          </div>
+          <p class="hero-meta"><span>SnT · University of Luxembourg</span><span>ROS 2 · PX4 · C++ · Python</span><span>Estimation · Simulation · Testing</span></p>
+        </div>
+        <figure class="evidence-figure portrait-figure">
+          <a href="assets/images/headshot.jpeg" data-evidence="portrait-caption"><img src="assets/images/headshot-480w.jpeg" srcset="assets/images/headshot-480w.jpeg 480w, assets/images/headshot-960w.jpeg 960w" sizes="(max-width: 56rem) min(28rem, calc(100vw - 3rem)), 28rem" width="1500" height="1000" alt="Jason Wakim Richards" loading="eager" fetchpriority="high" decoding="async"></a>
+          <figcaption id="portrait-caption">Jason Wakim Richards · Doctoral researcher, SnT.</figcaption>
         </figure>
-        <nav class="section-links" aria-label="Quick links to main sections">
-          <a href="research.html" class="section-link">Research</a>
-          <a href="publications.html" class="section-link">Publications</a>
-          <a href="projects.html" class="section-link">Projects</a>
-          <a href="experience.html" class="section-link">Experience</a>
-        </nav>
       </div>
     </section>
-    <section class="highlights" aria-labelledby="highlights-heading">
+    <section class="section" aria-labelledby="autonomy-heading">
+      <div class="container supporting-grid">
+        <div class="section-heading">
+          <p class="eyebrow">Engineering approach</p>
+          <h2 id="autonomy-heading">From sensing to action</h2>
+          <p>My work connects sensor data, state estimation, and control with the vehicle and its operating environment.</p>
+        </div>
+        <figure class="art-frame" aria-labelledby="hero-art-caption">
+          <svg viewBox="0 0 560 240" role="img" aria-labelledby="heroSvgTitle heroSvgDesc">
+            <title id="heroSvgTitle">Autonomy block diagram</title>
+            <desc id="heroSvgDesc">Sensing feeds state estimation and control. Control commands the vehicle, whose measurements return to sensing in a feedback loop. Illustrative only.</desc>
+            <g fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="20" y="30" width="150" height="65" rx="6"/>
+              <rect x="205" y="30" width="150" height="65" rx="6"/>
+              <rect x="390" y="30" width="150" height="65" rx="6"/>
+              <rect x="205" y="150" width="150" height="65" rx="6"/>
+              <path d="M170 62 H205 M198 56 L205 62 L198 68"/>
+              <path d="M355 62 H390 M383 56 L390 62 L383 68"/>
+              <path d="M465 95 V182 H355 M362 176 L355 182 L362 188"/>
+              <path d="M205 182 H95 V95 M89 102 L95 95 L101 102"/>
+            </g>
+            <g fill="currentColor" font-family="monospace" font-size="13">
+              <text x="38" y="57">SENSING</text>
+              <text x="38" y="78" font-size="11">cameras · IMU</text>
+              <text x="222" y="57">ESTIMATION</text>
+              <text x="222" y="78" font-size="11">state estimate</text>
+              <text x="407" y="57">CONTROL</text>
+              <text x="407" y="78" font-size="11">planning + control</text>
+              <text x="222" y="177">VEHICLE / PLANT</text>
+              <text x="222" y="198" font-size="11">motion + measurements</text>
+              <text x="24" y="207" font-size="11">feedback</text>
+            </g>
+          </svg>
+          <figcaption id="hero-art-caption">Illustration · not simulation data</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="featured-heading">
       <div class="container">
-        <h2 id="highlights-heading">Selected Highlights</h2>
-        <dl class="highlights-list">
-          <dt>Current Research</dt>
-          <dd><a href="research.html#current-research">Semantic Relational SLAM for autonomous UAVs</a> - Developing C++ and Python software for Semantic Relational SLAM and autonomous UAV systems at SnT, University of Luxembourg.</dd>
-          <dt>Key Project</dt>
-          <dd><a href="projects.html">JamSail 3U CubeSat - AOCS/ADCS Lead</a> - Led ADCS design and implementation for a 3U CubeSat carrying a GNSS-interference sensing payload and new solar-sail design.</dd>
-          <dt>Industry Experience</dt>
-          <dd><a href="experience.html">AOCS/GNC Engineer Intern at Airbus Defence &amp; Space</a> - Led LiDAR test activities and developed GNC simulation software for rover navigation.</dd>
-        </dl>
+        <div class="section-heading">
+          <p class="eyebrow">Featured work</p>
+          <h2 id="featured-heading">Lunar rover autonomy in simulation</h2>
+          <p>A ROS 2 and Gazebo simulation where I develop stereo visual odometry, wheel odometry and a continuous error-state filter around a six-wheel rover.</p>
+        </div>
+        <article class="card featured-card">
+          <p class="featured-label">Featured project</p>
+          <h3>Lunar simulator - six-wheel rover, stereo VO and error-state filtering</h3>
+          <p>ROS 2 Jazzy and Gazebo Harmonic stack in C++17 with Eigen and OpenCV. I develop the odometry front ends, the error-state filter, Ackermann control and the rosbag plus Plotly review path. More information on scope and limits is on the projects page.</p>
+          <ul class="tag-list" aria-label="Featured project stack">
+            <li>ROS 2 Jazzy</li>
+            <li>Gazebo Harmonic</li>
+            <li>C++17</li>
+            <li>Eigen</li>
+            <li>OpenCV</li>
+          </ul>
+          <div class="card-actions">
+            <a class="button" href="projects.html#lunar-simulator" aria-label="More Info about the lunar simulator">More Info</a>
+            <a class="button-secondary" href="https://github.com/richarJ2002/lunar_simulator">Source on GitHub</a>
+          </div>
+        </article>
       </div>
     </section>
-    <section class="cta-band" aria-label="Next steps">
-      <div class="container section-links">
-        <a href="cv.html" class="section-link">View CV</a>
-        <a href="contact.html" class="section-link">Contact</a>
+
+    <section class="section" aria-labelledby="more-projects-heading">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Simulation and estimation</p>
+          <h2 id="more-projects-heading">Entry and Orbital Dynamics</h2>
+          <p>Two compact codebases: an entry-vehicle trajectory simulator and a rigid-body and gravity framework with a CubeSat ADCS harness.</p>
+        </div>
+        <div class="grid-two">
+          <article class="card">
+            <h3>ArvSimulator - entry trajectory and atmosphere loop</h3>
+            <p>A C90 and CMake physics core with a layered Earth atmosphere and six-degree-of-freedom trajectory integration. I implemented the atmosphere, RK4 and Dormand-Prince 5(4) solvers, and archive loop, with Python tooling to inspect the atmosphere model.</p>
+            <ul class="tag-list" aria-label="ArvSimulator stack">
+              <li>C90</li>
+              <li>CMake</li>
+              <li>RK4</li>
+              <li>Dormand-Prince 5(4)</li>
+              <li>Python plotting</li>
+            </ul>
+            <div class="card-actions">
+              <a class="button-secondary" href="projects.html#arv-simulator" aria-label="More Info about ArvSimulator">More Info</a>
+              <a class="text-link" href="https://github.com/richarJ2002/ArvSimulator">Source on GitHub</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>NBodySimulator - rigid-body gravity and ADCS harness</h3>
+            <p>I developed NBodySimulator to simulate and test JamSail's ADCS: an Extended Kalman Filter fusing sun-sensor, magnetometer and IMU measurements, my own IGRF implementation, and a sun-sensing algorithm developed and tested in the simulator.</p>
+            <ul class="tag-list" aria-label="NBodySimulator stack">
+              <li>C90</li>
+              <li>CMake</li>
+              <li>EKF sensor fusion</li>
+              <li>IGRF</li>
+              <li>Embedded C</li>
+            </ul>
+            <div class="card-actions">
+              <a class="button-secondary" href="projects.html#nbody-simulator" aria-label="More Info about NBodySimulator">More Info</a>
+              <a class="text-link" href="https://github.com/richarJ2002/NBodySimulator">Source on GitHub</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="skills-heading">
+      <div class="container skills-strip">
+        <div class="section-heading">
+          <p class="eyebrow">Toolbox</p>
+          <h2 id="skills-heading">Tools for autonomy</h2>
+        </div>
+        <ul class="tag-list" aria-label="Technical skills">
+          <li>C++17</li>
+          <li>C90</li>
+          <li>Python</li>
+          <li>Embedded C</li>
+          <li>ROS 2</li>
+          <li>PX4</li>
+          <li>Gazebo Harmonic</li>
+          <li>Eigen</li>
+          <li>OpenCV</li>
+          <li>OpenVINS</li>
+          <li>Docker</li>
+          <li>Kalibr</li>
+          <li>CMake</li>
+          <li>Embedded Linux</li>
+          <li>Simulation and lab testing</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="experience-heading">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Now and recently</p>
+          <h2 id="experience-heading">Current and recent work</h2>
+          <p>Full history lives on the <a class="text-link" href="experience.html">Background page</a> and the printable <a class="text-link" href="cv.html">CV</a>.</p>
+        </div>
+        <ol class="timeline">
+          <li class="timeline-entry">
+            <span class="timeline-date">Nov 2025 - Present</span>
+            <div class="timeline-body">
+              <h3>Doctoral researcher - SnT, University of Luxembourg</h3>
+              <p>Semantic Relational SLAM for UAVs. ROS 2 and PX4 development in C++ and Python with OpenVINS, Docker, Kalibr and embedded Linux, across simulation, lab and flight testing.</p>
+            </div>
+          </li>
+          <li class="timeline-entry">
+            <span class="timeline-date">Sep 2024 - Aug 2025</span>
+            <div class="timeline-body">
+              <h3>ADCS lead, JamSail - NottSpace</h3>
+              <p>Led ADCS requirements, interfaces and embedded C development. Used NBodySimulator to test EKF sensor fusion and sun sensing, with an IGRF model I implemented.</p>
+            </div>
+          </li>
+          <li class="timeline-entry">
+            <span class="timeline-date">Jul 2023 - Aug 2024</span>
+            <div class="timeline-body">
+              <h3>AOCS/GNC intern - Airbus Defence and Space</h3>
+              <p>LiDAR integration and testing, including test-bench and breadboard campaigns, plus C/C++ rover simulation with synthetic camera and LiDAR data.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="callout">
+          <h2 id="contact-heading">Open to technical conversation</h2>
+          <p>For questions about the simulators, ADCS work or doctoral research, the best route is professional email. I also keep public code online.</p>
+          <div class="card-actions">
+            <a class="button" href="contact.html">Contact details</a>
+            <a class="button-secondary" href="mailto:jason.richards@uni.lu">jason.richards@uni.lu</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
+  <dialog id="evidence-viewer" aria-labelledby="evidence-title" aria-describedby="evidence-caption">
+    <div class="viewer-controls">
+      <h2 id="evidence-title">Image preview</h2>
+      <button type="button" class="button-secondary" data-viewer-close>Close</button>
+    </div>
+    <div class="viewer-media" data-viewer-media aria-busy="false"></div>
+    <p role="status"></p>
+    <p id="evidence-caption"></p>
+    <a class="button-secondary" data-viewer-original>Open original</a>
+  </dialog>
+
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-contact">
-        <a href="mailto:jason2richards@uni.lu" rel="noopener noreferrer"><i class="bi bi-envelope-fill" aria-hidden="true"></i> jason2richards@uni.lu</a>
-        <a href="https://github.com/richarJ2002" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i> GitHub: richarJ2002</a>
-        <a href="https://linkedin.com/in/jason-richards-jwr2002/" rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i> LinkedIn: jason-richards-jwr2002</a>
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-name">Jason Wakim Richards</p>
+        <p>Aerospace engineering · Robotics · GNC</p>
+        <p class="footer-small"><small>© <span data-year>2026</span> Jason Wakim Richards</small></p>
       </div>
-      <p>&copy; <span id="year"></span> Jason Wakim Richards</p>
+      <nav aria-label="More pages">
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="publications.html">Publications</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Profiles">
+        <ul class="footer-links">
+          <li><a href="https://github.com/richarJ2002">GitHub profile</a></li>
+          <li><a href="https://www.linkedin.com/in/jason-richards-jwr2002/">LinkedIn profile</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </div>
   </footer>
-  <script src="js/theme.js"></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

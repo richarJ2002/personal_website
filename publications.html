@@ -1,103 +1,108 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Publications - Jason Wakim Richards</title>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Publications by Jason Wakim Richards, Doctoral Researcher at SnT, University of Luxembourg.">
+  <title>Publications - Jason Richards</title>
+  <meta name="description" content="Selected publications and reports by Jason Wakim Richards: JamSail ADCS, IDeT-Sat, and Sample Fetch Rover iBB3 field trials, with PDF links.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="icon" href="assets/images/favicon-512x512.png">
-  <link rel="apple-touch-icon" href="assets/images/favicon-512x512.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <script>(function () { const s = localStorage.getItem('theme'), d = window.matchMedia('(prefers-color-scheme:dark)').matches; document.documentElement.dataset.theme = s ? s === 'dark' : d })();</script>
+  <script src="js/theme.js"></script>
+  <script src="js/navigation.js" defer></script>
 </head>
-
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
-    <nav class="nav" aria-label="Main navigation">
-      <ul class="nav-links">
-        <li><a href="index.html"><i class="bi bi-house-door-fill" aria-hidden="true"></i> Home</a></li>
-        <li><a href="about.html"><i class="bi bi-person-fill" aria-hidden="true"></i> About</a></li>
-        <li><a href="research.html"><i class="bi bi-cpu-fill" aria-hidden="true"></i> Research</a></li>
-        <li><a href="publications.html" aria-current="page"><i class="bi bi-file-earmark-text-fill"
-              aria-hidden="true"></i> Publications</a></li>
-        <li><a href="projects.html"><i class="bi bi-tools" aria-hidden="true"></i> Projects</a></li>
-        <li><a href="experience.html"><i class="bi bi-briefcase-fill" aria-hidden="true"></i> Experience</a></li>
-        <li><a href="education.html"><i class="bi bi-mortarboard-fill" aria-hidden="true"></i> Education</a></li>
-        <li><a href="cv.html"><i class="bi bi-file-earmark-person-fill" aria-hidden="true"></i> CV</a></li>
-        <li><a href="contact.html"><i class="bi bi-envelope-fill" aria-hidden="true"></i> Contact</a></li>
-      </ul>
-      <button id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false"
-        class="theme-toggle">
-        <span aria-hidden="true" class="icon-sun" data-dark-hidden>☀</span>
-        <span aria-hidden="true" class="icon-moon" data-light-hidden>☾</span>
-      </button>
-    </nav>
+    <div class="container header-inner">
+      <button id="nav-toggle" class="menu-toggle" type="button" hidden aria-expanded="false" aria-controls="page-nav">Menu</button>
+      <nav aria-label="Main navigation">
+        <ul id="page-nav" class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><details class="nav-group is-current">
+            <summary>Research</summary>
+            <ul class="nav-submenu">
+              <li><a href="research.html">Research overview</a></li>
+              <li><a href="publications.html" aria-current="page">Publications</a></li>
+            </ul>
+          </details></li>
+          <li><details class="nav-group">
+            <summary>Background</summary>
+            <ul class="nav-submenu">
+              <li><a href="about.html">About</a></li>
+              <li><a href="experience.html">Experience</a></li>
+              <li><a href="education.html">Education</a></li>
+            </ul>
+          </details></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" type="button" hidden aria-label="Switch to dark mode" aria-pressed="false"><span aria-hidden="true">◐</span></button>
+    </div>
   </header>
-  <main>
-    <article class="container">
-      <header>
-        <h1>Publications & Papers</h1>
-        <p class="lead">Selected papers and reports in reverse chronological order. See ORCID for the complete list.</p>
+  <main id="main-content" tabindex="-1">
+    <div class="container">
+      <header class="page-intro">
+        <p class="eyebrow">Publications / 06</p>
+        <h1>Publications and reports</h1>
+        <p class="lead">Conference papers and an MEng project paper, with author lists and available PDFs.</p>
       </header>
-      <section aria-labelledby="publications-list-heading">
-        <article class="publication">
-          <h3>Field Trials of Integrated BreadBoard 3: Deomonstrating a Rover System in the Sample Fetch Rover Mission
-            Context</h3>
-          <p><strong>Authors:</strong> Róbert Marc, Chris Barclay, Geoffray Doignon, J.Ricardo Sanchez-Ibanez, Ben
-            Brayzier, Raul Arribas, Gianluca Borgo, Max Braun, Binal Chavda, Todd Cooper, Elia D'Ambrosi, Michael
-            Dinsdale, Charlotte
-            Garcia, Chris Hackett, Duncan Hamill, William Horton, Chris Lee, Yvonne Pickering, Jason Richards,
-            Vincent Schaeffer, Timothy Smith, Daniel Thomas, Piotr Weclewski, Martin Azkarate, Chiara Lombardi,
-            Pantelis Poulakis</p>
-          <p><strong>Location:</strong> Luxembourg, Luxembourg</p>
-          <p><strong>Venue:</strong> 1st International Conference on Space Robotics</p>
-          <p><strong>Dates:</strong> 24-27 June 2024</p>
-          <p><a href="assets/documents/papers/isparo2024_ibb3_paper_v2_correction_ibb3.pdf" target="_blank"
-              rel="noopener noreferrer">Download PDF</a></p>
-        </article>
-        <article class="publication">
+      <section class="section" aria-labelledby="publications-records-heading">
+        <div class="section-heading">
+          <h2 id="publications-records-heading">Selected records</h2>
+        </div>
+        <article class="card">
           <h3>Design and Simulation of JamSail ADCS</h3>
-          <p><strong>Authors:</strong> Jason Wakim Richards, Chantal Cappelletti</p>
-          <p><strong>Year:</strong> 2025</p>
-          <p><a href="assets/documents/papers/jason_richards_design_and_simulation_of_jamsail_adcs.pdf" target="_blank"
-              rel="noopener noreferrer">Download PDF</a></p>
+          <p><strong>Authors:</strong> Jason Richards, Chantal Cappelletti</p>
+          <p class="project-meta">2025 · University of Nottingham</p>
+          <p><a class="button-secondary" href="assets/documents/papers/jason_richards_design_and_simulation_of_jamsail_adcs.pdf" aria-describedby="jamsail-note">Read JamSail ADCS paper (PDF)</a></p>
+          <p id="jamsail-note" class="publication-note"><small>Written as part of my MEng dissertation; this is not a published piece of work.</small></p>
         </article>
-        <article class="publication">
+        <article class="card">
           <h3>IDeT-Sat: A Cubesat Design for Space Debris Detection and Analysis</h3>
-          <p><strong>Authors:</strong> Kuang Sun, Sophie Fromage, Robert Chudzik, Jason Richards, Storm McCarthye, Ethan
-            White, Harshvardhan Ranag, Basanta Limbu</p>
-          <p><strong>Venue:</strong> 75th International Astronautical Congress (IAC)</p>
-          <p><strong>Location:</strong> Milan, Italy</p>
-          <p><strong>Year:</strong> 14-18 October 2024</p>
-          <p><a href="assets/documents/papers/IDeT-Sat-a-Cubesat-Design-for-Space-Debris-Detection-and-Analysis.pdf"
-              target="_blank" rel="noopener noreferrer">Download PDF</a></p>
+          <p><strong>Authors:</strong> Kuang Sun, Sophie Fromage, Robert Chudzik, Jason Richards, Storm McCarthy, Ethan White, Harshvardhan Rana, Basanta Limbu</p>
+          <p class="project-meta">75th International Astronautical Congress (IAC) · Milan, Italy · 14-18 October 2024</p>
+          <p class="project-meta">Paper IAC-24,E2,3-GTS.4,11,x89668</p>
+          <!-- TODO: Add a verified publicly accessible publisher/DOI link if available; the IAF directory currently requires authentication. -->
+          <p><a class="button-secondary" href="assets/documents/papers/IDeT-Sat-a-Cubesat-Design-for-Space-Debris-Detection-and-Analysis.pdf">Read IDeT-Sat paper (PDF)</a></p>
         </article>
+        <article class="card">
+          <h3>Field Trials of the Integrated BreadBoard 3: Demonstrating a Rover System in the Sample Fetch Rover Mission Context</h3>
+          <p><strong>Authors:</strong> Róbert Marc, Chris Barclay, Geoffray Doignon, J.Ricardo Sanchez-Ibanez, Ben Brayzier, Raul Arribas, Gianluca Borgo, Max Braun, Binal Chavda, Todd Cooper, Elia D'Ambrosi, Michael Dinsdale, Charlotte Garcia, Chris Hackett, Duncan Hamill, William Horton, Chris Lee, Yvonne Pickering, Jason Richards, Vincent Schaeffer, Timothy Smith, Daniel Thomas, Piotr Weclewski, Martin Azkarate, Chiara Lombardi, Pantelis Poulakis</p>
+          <p class="project-meta">1st International Conference on Space Robotics · Luxembourg, Luxembourg · 24-27 June 2024</p>
+          <!-- TODO: Add a verified publisher/DOI link for the iBB3 field-trials paper if available. -->
+          <p><a class="button-secondary" href="assets/documents/papers/isparo2024_ibb3_paper_v2_correction_ibb3.pdf">Read iBB3 field-trials paper (PDF)</a></p>
+        </article>
+        <p>More records: <a class="text-link" href="https://orcid.org/0009-0002-3492-1919">ORCID</a>. Work in progress, including the SaCoGraph research concept, is described on the <a class="text-link" href="research.html">research page</a>.</p>
       </section>
-    </article>
+    </div>
   </main>
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-contact">
-        <a href="mailto:jason2richards@uni.lu" rel="noopener noreferrer"><i class="bi bi-envelope-fill"
-            aria-hidden="true"></i> jason2richards@uni.lu</a>
-        <a href="https://github.com/richarJ2002" rel="noopener noreferrer"><i class="bi bi-github"
-            aria-hidden="true"></i> GitHub: richarJ2002</a>
-        <a href="https://linkedin.com/in/jason-richards-jwr2002/" rel="noopener noreferrer"><i class="bi bi-linkedin"
-            aria-hidden="true"></i> LinkedIn: jason-richards-jwr2002</a>
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-name">Jason Wakim Richards</p>
+        <p>Aerospace engineering · Robotics · GNC</p>
+        <p class="footer-small"><small>© <span data-year>2026</span> Jason Wakim Richards</small></p>
       </div>
-      <p>&copy; <span id="year"></span> Jason Wakim Richards</p>
+      <nav aria-label="More pages">
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="publications.html">Publications</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Profiles">
+        <ul class="footer-links">
+          <li><a href="https://github.com/richarJ2002">GitHub profile</a></li>
+          <li><a href="https://www.linkedin.com/in/jason-richards-jwr2002/">LinkedIn profile</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </div>
   </footer>
-  <script src="js/theme.js"></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
-
 </html>

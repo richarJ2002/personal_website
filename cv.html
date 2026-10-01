@@ -1,174 +1,154 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CV - Jason Wakim Richards</title>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Curriculum vitae of Jason Wakim Richards, Doctoral Researcher at SnT, University of Luxembourg.">
+  <title>CV - Jason Richards</title>
+  <meta name="description" content="Public curriculum vitae of Jason Wakim Richards: aerospace engineering, robotics, GNC, selected projects, education, and skills.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="icon" href="assets/images/favicon-512x512.png">
-  <link rel="apple-touch-icon" href="assets/images/favicon-512x512.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <script>(function () { const s = localStorage.getItem('theme'), d = window.matchMedia('(prefers-color-scheme:dark)').matches; document.documentElement.dataset.theme = s ? s === 'dark' : d })();</script>
+  <script src="js/theme.js"></script>
+  <script src="js/navigation.js" defer></script>
 </head>
-
-<body>
+<body class="cv-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
-    <nav class="nav" aria-label="Main navigation">
-      <ul class="nav-links">
-        <li><a href="index.html"><i class="bi bi-house-door-fill" aria-hidden="true"></i> Home</a></li>
-        <li><a href="about.html"><i class="bi bi-person-fill" aria-hidden="true"></i> About</a></li>
-        <li><a href="research.html"><i class="bi bi-cpu-fill" aria-hidden="true"></i> Research</a></li>
-        <li><a href="publications.html"><i class="bi bi-file-earmark-text-fill" aria-hidden="true"></i> Publications</a>
-        </li>
-        <li><a href="projects.html"><i class="bi bi-tools" aria-hidden="true"></i> Projects</a></li>
-        <li><a href="experience.html"><i class="bi bi-briefcase-fill" aria-hidden="true"></i> Experience</a></li>
-        <li><a href="education.html"><i class="bi bi-mortarboard-fill" aria-hidden="true"></i> Education</a></li>
-        <li><a href="cv.html" aria-current="page"><i class="bi bi-file-earmark-person-fill" aria-hidden="true"></i>
-            CV</a></li>
-        <li><a href="contact.html"><i class="bi bi-envelope-fill" aria-hidden="true"></i> Contact</a></li>
-      </ul>
-      <button id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false"
-        class="theme-toggle">
-        <span aria-hidden="true" class="icon-sun" data-dark-hidden>☀</span>
-        <span aria-hidden="true" class="icon-moon" data-light-hidden>☾</span>
-      </button>
-    </nav>
+    <div class="container header-inner">
+      <button id="nav-toggle" class="menu-toggle" type="button" hidden aria-expanded="false" aria-controls="page-nav">Menu</button>
+      <nav aria-label="Main navigation">
+        <ul id="page-nav" class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><details class="nav-group">
+            <summary>Research</summary>
+            <ul class="nav-submenu">
+              <li><a href="research.html">Research overview</a></li>
+              <li><a href="publications.html">Publications</a></li>
+            </ul>
+          </details></li>
+          <li><details class="nav-group">
+            <summary>Background</summary>
+            <ul class="nav-submenu">
+              <li><a href="about.html">About</a></li>
+              <li><a href="experience.html">Experience</a></li>
+              <li><a href="education.html">Education</a></li>
+            </ul>
+          </details></li>
+          <li><a href="cv.html" aria-current="page">CV</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" type="button" hidden aria-label="Switch to dark mode" aria-pressed="false"><span aria-hidden="true">◐</span></button>
+    </div>
   </header>
-  <main>
-    <article class="container cv-document" id="cv">
-      <section class="cv-section">
-        <h2>Research Interests</h2>
-        <p>Semantic Relational SLAM and autonomous UAV systems, linking camera–IMU state estimation, perception,
-          semantic mapping, navigation, planning, and control. Research fleet-level and multi-vehicle coordination using
-          shared semantic maps, resource-efficient navigation, and mission-aware collaborative planning.</p>
-      </section>
-      <section class="cv-section">
-        <h2>Education</h2>
-        <dl>
-          <dt><strong>PhD in Robotics – Autonomous UAV Systems</strong> - SnT, University of Luxembourg, Kirchberg,
-            Luxembourg</dt>
-          <dd><time datetime="2025-11">Nov 2025</time> – Present</dd>
-          <dd>Research on Semantic Relational SLAM and autonomous UAV systems. Advisor: Prof. Dr Holger Voos.</dd>
-          <dt><strong>MEng in Aerospace Engineering - First-Class Honours</strong> - University of Nottingham,
-            Nottingham, UK</dt>
-          <dd><time datetime="2020-09">Sep 2020</time> – <time datetime="2025-08">Aug 2025</time></dd>
-          <dd>Thesis: MEng Individual Project: Investigating advanced topics in aerospace control systems and autonomous
-            vehicle dynamics</dd>
-          <dd>Advisor: Prof. Chantal Cappelletti</dd>
-          <dt><strong>IEEE RAS Summer School on Multi-Robot Systems</strong> - Czech Technical University in Prague,
-            Prague, Czechia</dt>
-          <dd><time datetime="2026-07">Jul 2026</time></dd>
-          <dd>Completed the 2026 IEEE RAS Summer School on Multi-Robot Systems, covering cooperative aerial robotics and
-            active perception; presented the SaCoGraph collaborative-UAV research concept.</dd>
-          <dt><strong>Space Resources & Robotics Summer School</strong> - AGH University of Kraków, Krakow, Poland</dt>
-          <dd><time datetime="2026-05">May 2026</time></dd>
-          <dd>Completed intensive training in space resources, planetary robotics, and robotic manipulation for
-            exploration applications.</dd>
-          <dt><strong>ESA Academy Space Systems Engineering Training Course</strong> - ESA Academy, Transinne, Belgium
-          </dt>
-          <dd><time datetime="2025-05">May 2025</time></dd>
-          <dd>Completed intensive ESA Academy training across the space-system lifecycle, from mission objectives and
-            concepts of operations through architecture, integration, verification, and operations.</dd>
-        </dl>
-      </section>
-      <section class="cv-section">
-        <h2>Professional Experience</h2>
-        <dl>
-          <dt><strong>Doctoral Researcher – Autonomous UAV Systems</strong> - SnT, University of Luxembourg, Kirchberg,
-            Luxembourg</dt>
-          <dd><time datetime="2025-11">Nov 2025</time> – Present</dd>
-          <dd>Develop C++ and Python software for Semantic Relational SLAM and autonomous UAV systems, linking
-            camera–IMU state estimation, perception, semantic mapping, navigation, planning, and control. Integrate,
-            debug, and deploy onboard autonomy on physical UAVs using ROS 2, PX4, embedded Linux, Raspberry Pi,
-            camera/IMU sensing, and OpenVINS visual–inertial odometry. Evaluate algorithm and system performance through
-            simulation, laboratory, hardware, and flight testing; analyze estimation and autonomy data and trace
-            failures across software, sensors, and vehicle interfaces. Build reproducible Docker-based development,
-            deployment, and camera–IMU calibration workflows with Kalibr. Research fleet-level and multi-vehicle
-            coordination using shared semantic maps, resource-efficient navigation, and mission-aware collaborative
-            planning.</dd>
-          <dt><strong>AOCS/GNC Engineer Intern</strong> - Airbus Defence & Space, Stevenage, UK</dt>
-          <dd><time datetime="2023-07">Jul 2023</time> – <time datetime="2024-08">Aug 2024</time></dd>
-          <dd>Led LiDAR test activities during Integrated BreadBoarding (iBB) 3 & 4 campaigns, supporting an end-to-end
-            Sample Fetch Rover concept-of-operations demonstration at Technology Readiness Level 6. Designed a networked
-            sensor test bench, integrated LiDAR with rover breadboards using ROS over a local wireless network, executed
-            test procedures, and collected and analyzed campaign performance data. Developed and debugged C/C++ software
-            on Linux for an offline GNC simulation, coupling a natural-scene generator to produce synthetic imagery and
-            LiDAR scans for algorithm development and performance evaluation. Investigated terrain generation,
-            LiDAR/radar sensor modeling, and Vector Field Histogram planning for lunar-rover applications, connecting
-            simulation assumptions to navigation performance. Delivered software and hardware integration in a
-            fast-paced Agile team using Git/GitLab, Jira, and Confluence; documented test status and resolved issues
-            across GNC, simulation, sensors, and vehicle hardware.</dd>
-        </dl>
-      </section>
-      <section class="cv-section">
-        <h2>Download CV</h2>
-        <!-- TODO: Replace with generic CV PDF -->
-        <p><a href="assets/documents/nasa_jpl_multi_agent_robotics_field_systems_engineer/jason_richards_cv.pdf"
-            target="_blank" rel="noopener noreferrer">Download CV (PDF)</a></p>
-      </section>
-      <section class="cv-section">
-        <h2>Selected Publications</h2>
-        <p>See <a href="publications.html">Publications</a> and ORCID for the complete list.</p>
-      </section>
-      <section class="cv-section">
-        <h2>Technical Skills</h2>
-        <dl class="cv-skills">
-          <dt>Languages</dt>
-          <dd><code>C++</code> <code>Python</code> <code>MATLAB</code> <code>C</code></dd>
-          <dt>Robotics Frameworks</dt>
-          <dd><code>ROS 2</code> <code>ROS</code> <code>PX4</code> <code>MoveIt 2</code></dd>
-          <dt>Libraries & Tools</dt>
-          <dd><code>Eigen</code> <code>OpenCV</code> <code>PCL</code> <code>PyTorch</code> <code>TensorFlow</code>
-            <code>CMake</code> <code>Docker</code> <code>Git</code>
-          </dd>
-          <dt>Domains</dt>
-          <dd>Motion Planning, Manipulation, Control, Perception, SLAM, Reinforcement Learning, Human-Robot Interaction
-          </dd>
-        </dl>
-      </section>
-      <section class="cv-section">
-        <h2>Degrees, Training Courses &amp; Workshops</h2>
-        <ul>
-          <li>First-Class Honours, University of Nottingham, 2025</li>
-          <li>IEEE RAS Summer School on Multi-Robot Systems, 2026</li>
-          <li>Space Resources & Robotics Summer School, 2026</li>
-          <li>ESA Academy Space Systems Engineering Training Course, 2025</li>
+  <main id="main-content" tabindex="-1">
+    <div class="container">
+      <header class="page-intro">
+        <p class="eyebrow">CV / 05</p>
+        <h1>Curriculum vitae</h1>
+        <p class="lead">Aerospace engineering, robotics, and guidance, navigation and control. A public summary of my roles, projects, education, and technical skills.</p>
+      </header>
+      <div class="print-only">
+        <h2>Jason Wakim Richards</h2>
+        <p>Doctoral researcher · Aerospace engineering · Robotics · GNC</p>
+      </div>
+      <button id="print-cv" class="button-secondary print-button" type="button" hidden data-print>Print / save PDF</button>
+      <p class="screen-only">Tip: use your browser's Print dialogue and choose “Save as PDF” to keep a copy of this page.</p>
+      <section class="section cv-section" aria-labelledby="cv-contact-heading">
+        <div class="section-heading">
+          <h2 id="cv-contact-heading">Contact</h2>
+        </div>
+        <ul class="detail-list">
+          <li>Email: <a class="text-link" href="mailto:jason.richards@uni.lu">jason.richards@uni.lu</a></li>
+          <li>GitHub: <a class="text-link" href="https://github.com/richarJ2002">github.com/richarJ2002</a></li>
+          <li>LinkedIn: <a class="text-link" href="https://www.linkedin.com/in/jason-richards-jwr2002/">linkedin.com/in/jason-richards-jwr2002</a></li>
+          <li>ORCID: <a class="text-link" href="https://orcid.org/0009-0002-3492-1919">0009-0002-3492-1919</a></li>
         </ul>
       </section>
-      <section class="cv-section">
-        <h2>Volounteering</h2>
-        <ul>
-          <li>Comps Management - UKSEDS national competitions, September 2025 - October 2026</li>
-          <li>ORT Volounteer - UKSEDS national competitions, September 2024 – October 2025</li>
-          <!-- TODO: Add proof link for IEEE review service (e.g. ORCID record or confirmation) -->
-          <!-- <li>Reviewer - IEEE conferences (ICRA, IROS, RA-L, RSS), 2022 – Present</li> -->
+      <section class="section cv-section" aria-labelledby="cv-professional-heading">
+        <div class="section-heading">
+          <h2 id="cv-professional-heading">Professional roles</h2>
+        </div>
+        <ul class="detail-list">
+          <li>Doctoral researcher, SnT, University of Luxembourg - <time datetime="2025-11">Nov 2025</time> - present. Semantic relational SLAM and situational-awareness architectures for UAVs; ROS 2, PX4, OpenVINS, embedded Linux, flight testing.</li>
+          <li>AOCS/GNC engineer intern, Airbus Defence and Space, Stevenage - <time datetime="2023-07">Jul 2023</time> - <time datetime="2024-08">Aug 2024</time>. Led LiDAR test activities on iBB3 and iBB4 for a Sample Fetch Rover concept demonstration; networked ROS bench; offline C/C++ GNC with synthetic data.</li>
         </ul>
       </section>
-    </article>
+      <section class="section cv-section" aria-labelledby="cv-leadership-heading">
+        <div class="section-heading">
+          <h2 id="cv-leadership-heading">Project leadership and volunteering</h2>
+        </div>
+        <ul class="detail-list">
+          <li>Competitions Management Co-Lead (previously rover competition volunteer), UKSEDS - <time datetime="2024-09">Sep 2024</time> - <time datetime="2026-09">Sep 2026</time>. Four competitions: ORT, SDC, ISAM, NRC.</li>
+          <li>AOCS/ADCS lead, JamSail 3U CubeSat, NottSpace - <time datetime="2024-09">Sep 2024</time> - <time datetime="2025-08">Aug 2025</time>. Developed NBodySimulator to test ADCS, EKF sensor fusion, my IGRF implementation and a sun-sensing algorithm; studied but rejected TRIAD due to noise sensitivity.</li>
+          <li>Systems engineer, IDET-Sat CubeSat, Nottingham Space Society - <time datetime="2022-09">Sep 2022</time> - <time datetime="2023-07">Jul 2023</time>. Requirements, architecture, interfaces, breakdown structures; Raspberry Pi, microcontrollers, IMU, cameras.</li>
+        </ul>
+      </section>
+      <section class="section cv-section" aria-labelledby="cv-projects-heading">
+        <div class="section-heading">
+          <h2 id="cv-projects-heading">Selected projects</h2>
+        </div>
+        <ul class="detail-list">
+          <li><a class="text-link" href="projects.html#lunar-simulator">Lunar simulator</a> - ROS 2 rover autonomy stack with visual odometry and Kalman filtering.</li>
+          <li><a class="text-link" href="projects.html#arv-simulator">ArvSimulator</a> - atmospheric six-degree-of-freedom trajectory simulation.</li>
+          <li><a class="text-link" href="projects.html#nbody-simulator">N-Body Simulator</a> - simulator developed to test JamSail ADCS, EKF sensor fusion and sun sensing.</li>
+        </ul>
+        <p>Full detail: <a class="text-link" href="projects.html">projects page</a>.</p>
+      </section>
+      <section class="section cv-section" aria-labelledby="cv-education-heading">
+        <div class="section-heading">
+          <h2 id="cv-education-heading">Education</h2>
+        </div>
+        <ul class="detail-list">
+          <li>Doctoral research, ongoing, SnT, University of Luxembourg - <time datetime="2025-11">Nov 2025</time> - present.</li>
+          <li>MEng Aerospace Engineering, First-Class, University of Nottingham - <time datetime="2020-09">Sep 2020</time> - <time datetime="2025-08">Aug 2025</time>.</li>
+          <li>Training: ESA Academy Space Systems Engineering (<time datetime="2025-05">May 2025</time>); UNIVERSEH Space is all Around (<time datetime="2026-04">Apr 2026</time>); AGH Space Resources and Robotics (<time datetime="2026-05">May 2026</time>); IEEE RAS multi-robot systems summer school, Prague (<time datetime="2026-07">Jul 2026</time>).</li>
+        </ul>
+      </section>
+      <section class="section cv-section" aria-labelledby="cv-skills-heading">
+        <div class="section-heading">
+          <h2 id="cv-skills-heading">Skills</h2>
+        </div>
+        <ul class="detail-list">
+          <li>Estimation and control: EKF sensor fusion, IGRF implementation, sun sensing, TRIAD noise-sensitivity study, FFT analysis, filtering, VFH planning, MATLAB and Simulink dynamics.</li>
+          <li>Robotics deployment: C, C++, Python, ROS 2, PX4, OpenVINS, embedded Linux, Raspberry Pi, Kalibr, Docker, flight testing.</li>
+          <li>Systems and testing: requirements and verification, interfaces, test campaigns, synthetic data generation, coordination and documentation.</li>
+          <li>Additional tools: ROS, MoveIt 2, Eigen, OpenCV, PCL, PyTorch, TensorFlow, CMake, and Git.</li>
+        </ul>
+      </section>
+      <section class="section cv-section" aria-labelledby="cv-publications-heading">
+        <div class="section-heading">
+          <h2 id="cv-publications-heading">Publications and reports</h2>
+        </div>
+        <p>JamSail ADCS MEng project paper (2025, unpublished); IDeT-Sat, IAC (2024); iBB3 field trials, Space Robotics conference (2024). Author lists, venue details, and PDFs are on the <a class="text-link" href="publications.html">publications page</a>.</p>
+      </section>
+    </div>
   </main>
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-contact">
-        <a href="mailto:jason2richards@uni.lu" rel="noopener noreferrer"><i class="bi bi-envelope-fill"
-            aria-hidden="true"></i> jason2richards@uni.lu</a>
-        <a href="https://github.com/richarJ2002" rel="noopener noreferrer"><i class="bi bi-github"
-            aria-hidden="true"></i> GitHub: richarJ2002</a>
-        <a href="https://linkedin.com/in/jason-richards-jwr2002/" rel="noopener noreferrer"><i class="bi bi-linkedin"
-            aria-hidden="true"></i> LinkedIn: jason-richards-jwr2002</a>
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-name">Jason Wakim Richards</p>
+        <p>Aerospace engineering · Robotics · GNC</p>
+        <p class="footer-small"><small>© <span data-year>2026</span> Jason Wakim Richards</small></p>
       </div>
-      <p>&copy; <span id="year"></span> Jason Wakim Richards</p>
+      <nav aria-label="More pages">
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="publications.html">Publications</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Profiles">
+        <ul class="footer-links">
+          <li><a href="https://github.com/richarJ2002">GitHub profile</a></li>
+          <li><a href="https://www.linkedin.com/in/jason-richards-jwr2002/">LinkedIn profile</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </div>
   </footer>
-  <script src="js/theme.js"></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
-
 </html>

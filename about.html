@@ -1,89 +1,151 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>About - Jason Wakim Richards</title>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="About Jason Wakim Richards, Doctoral Researcher at SnT, University of Luxembourg, working on Semantic Relational SLAM and autonomous UAV systems.">
+  <title>About - Jason Richards</title>
+  <meta name="description" content="About Jason Wakim Richards, doctoral researcher in robotics working on semantic SLAM and situational-awareness architectures for UAVs.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="assets/images/favicon-512x512.png">
-  <link rel="apple-touch-icon" href="assets/images/favicon-512x512.png">
-  <script>(function(){const s=localStorage.getItem('theme'),d=window.matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.dataset.theme=s?s==='dark':d})();</script>
+  <script src="js/theme.js"></script>
+  <script src="js/navigation.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
-    <nav class="nav" aria-label="Main navigation">
-      <ul class="nav-links">
-        <li><a href="index.html"><i class="bi bi-house-door-fill" aria-hidden="true"></i> Home</a></li>
-        <li><a href="about.html" aria-current="page"><i class="bi bi-person-fill" aria-hidden="true"></i> About</a></li>
-        <li><a href="research.html"><i class="bi bi-cpu-fill" aria-hidden="true"></i> Research</a></li>
-        <li><a href="publications.html"><i class="bi bi-file-earmark-text-fill" aria-hidden="true"></i> Publications</a></li>
-        <li><a href="projects.html"><i class="bi bi-tools" aria-hidden="true"></i> Projects</a></li>
-        <li><a href="experience.html"><i class="bi bi-briefcase-fill" aria-hidden="true"></i> Experience</a></li>
-        <li><a href="education.html"><i class="bi bi-mortarboard-fill" aria-hidden="true"></i> Education</a></li>
-        <li><a href="cv.html"><i class="bi bi-file-earmark-person-fill" aria-hidden="true"></i> CV</a></li>
-        <li><a href="contact.html"><i class="bi bi-envelope-fill" aria-hidden="true"></i> Contact</a></li>
-      </ul>
-      <button id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" class="theme-toggle">
-        <span aria-hidden="true" class="icon-sun" data-dark-hidden>☀</span>
-        <span aria-hidden="true" class="icon-moon" data-light-hidden>☾</span>
-      </button>
-    </nav>
+    <div class="container header-inner">
+      <button id="nav-toggle" class="menu-toggle" type="button" hidden aria-expanded="false" aria-controls="page-nav">Menu</button>
+      <nav aria-label="Main navigation">
+        <ul id="page-nav" class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><details class="nav-group">
+            <summary>Research</summary>
+            <ul class="nav-submenu">
+              <li><a href="research.html">Research overview</a></li>
+              <li><a href="publications.html">Publications</a></li>
+            </ul>
+          </details></li>
+          <li><details class="nav-group is-current">
+            <summary>Background</summary>
+            <ul class="nav-submenu">
+              <li><a href="about.html" aria-current="page">About</a></li>
+              <li><a href="experience.html">Experience</a></li>
+              <li><a href="education.html">Education</a></li>
+            </ul>
+          </details></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" type="button" hidden aria-label="Switch to dark mode" aria-pressed="false"><span aria-hidden="true">◐</span></button>
+    </div>
   </header>
-  <main>
-    <article class="container">
-      <header>
+  <main id="main-content" tabindex="-1">
+    <div class="container">
+      <header class="page-intro">
+        <p class="eyebrow">Profile / 01</p>
         <h1>About</h1>
+        <p class="lead">Doctoral researcher in aerospace robotics, working on semantic SLAM and situational-awareness architectures for UAVs.</p>
       </header>
-      <section>
-        <p>I am Jason Wakim Richards, a Doctoral Researcher at SnT, University of Luxembourg, working on Semantic Relational SLAM and autonomous UAV systems. My research focuses on linking camera–IMU state estimation, perception, semantic mapping, navigation, planning, and control to enable UAVs to operate reliably in unstructured environments.</p>
-        <p>My work spans the robotics stack, from low-level control and perception to system integration and field testing. See my <a href="research.html">research</a> and <a href="projects.html">projects</a> for current work and past GNC and CubeSat systems experience.</p>
-        <figure>
-          <img src="assets/images/esa-galaxia-certificate.jpeg" alt="ESA Galaxia Systems Engineering Certificate" loading="lazy">
-          <figcaption>ESA Academy Space Systems Engineering Training — see <a href="education.html">Education</a></figcaption>
-        </figure>
+      <section class="section" aria-labelledby="about-background-heading">
+        <div class="section-heading">
+          <h2 id="about-background-heading">Background</h2>
+        </div>
+        <div class="prose">
+          <p>I am Jason Wakim Richards, a doctoral researcher at SnT, University of Luxembourg, where since November 2025 I have been developing semantic relational SLAM and situational-awareness architectures for UAVs. My work spans C++ and Python development, ROS 2 and PX4 integration, OpenVINS-based estimation, and embedded Linux on Raspberry Pi with camera and IMU sensing, supported by Docker-based tooling, Kalibr calibration, and simulation, laboratory, hardware, and flight testing.</p>
+          <p>Before starting doctoral research, I worked as an AOCS/GNC engineer intern at Airbus Defence and Space in Stevenage. I led LiDAR test activities during the iBB3 and iBB4 breadboard campaigns supporting a Sample Fetch Rover concept demonstration. I also built a networked ROS sensor test bench and developed C/C++ GNC simulation software with synthetic camera imagery and LiDAR scans, alongside investigations into terrain generation and lunar-rover planning.</p>
+          <p>My student space projects include JamSail, where I led AOCS/ADCS development: subsystem requirements, interfaces, a verification plan, embedded C flight software, and Linux attitude simulation. For IDET-Sat, I worked on requirements, system architecture, and subsystem interfaces. I hold a First-Class MEng in Aerospace Engineering from the University of Nottingham.</p>
+          <p>From 2024 to 2026 I also volunteered with UKSEDS, progressing from Olympus Rover Trials volunteer to Competitions Management Co-Lead.</p>
+          <p>See my <a class="text-link" href="research.html">research</a>, <a class="text-link" href="projects.html">projects</a>, and <a class="text-link" href="contact.html">contact</a> pages for more detail.</p>
+        </div>
       </section>
-      <section>
-        <h2>Background</h2>
-        <dl>
-          <dt>Current Position</dt>
-          <dd>Doctoral Researcher, SnT, University of Luxembourg</dd>
-          <dt>Research Interests</dt>
-          <dd>Semantic SLAM, UAV Autonomy, Multi-Robot Systems, Sensor Fusion, State Estimation, Motion Planning, Embedded Flight Software</dd>
-          <dt>Location</dt>
-          <dd>Luxembourg</dd>
-          <dt>Email</dt>
-          <dd><a href="mailto:jason2richards@uni.lu">jason2richards@uni.lu</a></dd>
-        </dl>
+      <section class="section" aria-labelledby="about-skills-heading">
+        <div class="section-heading">
+          <h2 id="about-skills-heading">Skills</h2>
+        </div>
+        <div class="grid-two">
+          <div class="card">
+            <h3>Estimation and control</h3>
+            <ul class="tag-list">
+              <li>TRIAD feasibility and noise-sensitivity study</li>
+              <li>Extended Kalman filtering</li>
+              <li>Sun-sensor, magnetometer, and IMU fusion</li>
+              <li>My IGRF geomagnetic-model implementation</li>
+              <li>Sun-sensing algorithm development and simulation testing</li>
+              <li>FFT-based signal analysis</li>
+              <li>Low-pass filtering</li>
+              <li>Vector Field Histogram planning</li>
+              <li>Linear aircraft dynamics in MATLAB and Simulink</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Robotics deployment</h3>
+            <ul class="tag-list">
+              <li>C++</li>
+              <li>C</li>
+              <li>Python</li>
+              <li>ROS 2</li>
+              <li>PX4</li>
+              <li>OpenVINS</li>
+              <li>Embedded Linux</li>
+              <li>Raspberry Pi</li>
+              <li>Camera and IMU calibration with Kalibr</li>
+              <li>Docker</li>
+              <li>Simulation, laboratory, hardware, and flight testing</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Systems and testing</h3>
+            <ul class="tag-list">
+              <li>Requirements, interfaces, and verification planning</li>
+              <li>System architecture and breakdown structures</li>
+              <li>LiDAR test campaigns</li>
+              <li>Synthetic image and scan generation</li>
+              <li>Networked test benches</li>
+              <li>Volunteer coordination, schedules, documentation, and partners</li>
+            </ul>
+          </div>
+        </div>
       </section>
-      <section>
-        <h2>Profiles</h2>
-        <dl>
-          <dt>GitHub</dt>
-          <dd><a href="https://github.com/richarJ2002" rel="noopener noreferrer">github.com/richarJ2002</a> <span aria-hidden="true">↗</span></dd>
-          <dt>ORCID</dt>
-          <dd><a href="https://orcid.org/0009-0002-3492-1919" rel="noopener noreferrer">orcid.org/0009-0002-3492-1919</a> <span aria-hidden="true">↗</span></dd>
-          <dt>LinkedIn</dt>
-          <dd><a href="https://linkedin.com/in/jason-richards-jwr2002/" rel="noopener noreferrer">linkedin.com/in/jason-richards-jwr2002/</a> <span aria-hidden="true">↗</span></dd>
-        </dl>
+      <section class="section" aria-labelledby="about-elsewhere-heading">
+        <div class="section-heading">
+          <h2 id="about-elsewhere-heading">Elsewhere</h2>
+        </div>
+        <ul class="detail-list">
+          <li>GitHub: <a class="text-link" href="https://github.com/richarJ2002">github.com/richarJ2002</a></li>
+          <li>LinkedIn: <a class="text-link" href="https://www.linkedin.com/in/jason-richards-jwr2002/">linkedin.com/in/jason-richards-jwr2002</a></li>
+          <li>ORCID: <a class="text-link" href="https://orcid.org/0009-0002-3492-1919">0009-0002-3492-1919</a></li>
+          <li>Direct contact: see the <a class="text-link" href="contact.html">contact page</a>.</li>
+        </ul>
       </section>
-    </article>
+    </div>
   </main>
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-contact">
-        <a href="mailto:jason2richards@uni.lu" rel="noopener noreferrer"><i class="bi bi-envelope-fill" aria-hidden="true"></i> jason2richards@uni.lu</a>
-        <a href="https://github.com/richarJ2002" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i> GitHub: richarJ2002</a>
-        <a href="https://linkedin.com/in/jason-richards-jwr2002/" rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i> LinkedIn: jason-richards-jwr2002</a>
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-name">Jason Wakim Richards</p>
+        <p>Aerospace engineering · Robotics · GNC</p>
+        <p class="footer-small"><small>© <span data-year>2026</span> Jason Wakim Richards</small></p>
       </div>
-      <p>&copy; <span id="year"></span> Jason Wakim Richards</p>
+      <nav aria-label="More pages">
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="publications.html">Publications</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Profiles">
+        <ul class="footer-links">
+          <li><a href="https://github.com/richarJ2002">GitHub profile</a></li>
+          <li><a href="https://www.linkedin.com/in/jason-richards-jwr2002/">LinkedIn profile</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </div>
   </footer>
-  <script src="js/theme.js"></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
